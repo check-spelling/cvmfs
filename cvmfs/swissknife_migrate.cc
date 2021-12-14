@@ -746,7 +746,7 @@ bool CommandMigrate::AbstractMigrationWorker<DerivedT>::
     "INSERT OR REPLACE INTO nested_catalogs (path,   sha1,  size) "
     "                VALUES                 (:path, :sha1, :size);");
 
-  // go through all nested catalogs and update their references (we are curently
+  // go through all nested catalogs and update their references (we are currently
   // in their parent catalog)
   // Note: we might need to wait for the nested catalog to be fully processed.
   PendingCatalogList::const_iterator i    = data->nested_catalogs.begin();
