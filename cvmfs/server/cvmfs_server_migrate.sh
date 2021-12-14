@@ -31,9 +31,9 @@ _migrate_2_1_6() {
   local new_upstream="local,${storage_path}/data/txn,${storage_path}"
 
   echo "--> removing spooler pipes"
-  local pipe_pathes="${CVMFS_SPOOL_DIR}/paths"
+  local pipe_paths="${CVMFS_SPOOL_DIR}/paths"
   local pipe_digests="${CVMFS_SPOOL_DIR}/digests"
-  rm -f $pipe_pathes > /dev/null 2>&1 || echo "Warning: not able to delete $pipe_pathes"
+  rm -f $pipe_paths > /dev/null 2>&1 || echo "Warning: not able to delete $pipe_paths"
   rm -f $pipe_digests > /dev/null 2>&1 || echo "Warning: not able to delete $pipe_digests"
 
   if is_stratum0 $name; then

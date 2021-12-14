@@ -130,11 +130,11 @@ def touchSymlink(path, shellscript):
 	hackScript(shellscript, "echo touching symlink " + path)
 	hackScript(shellscript, "touch " + path)
 
-def createPathIfNeeded(path, shellscript, alreadyCreatedPathes=[]):
+def createPathIfNeeded(path, shellscript, alreadyCreatedPaths=[]):
 	dirPath = os.path.dirname(path)
-	if dirPath != "" and not os.path.exists(dirPath) and dirPath not in alreadyCreatedPathes:
+	if dirPath != "" and not os.path.exists(dirPath) and dirPath not in alreadyCreatedPaths:
 		createDirectory(dirPath, shellscript)
-		alreadyCreatedPathes.append(dirPath)
+		alreadyCreatedPaths.append(dirPath)
 
 def hackScript(shellscript, str):
 	shellscript.write(str + "\n")
