@@ -164,7 +164,7 @@ class History {
   virtual bool ExistsBranch(const std::string &branch_name) const = 0;
   virtual bool InsertBranch(const Branch &branch) = 0;
   /**
-   * When removing tags, branches can become abandonded. Remove abandoned
+   * When removing tags, branches can become abandoned. Remove abandoned
    * branches and redirect the parent pointer of their child branches.
    */
   virtual bool PruneBranches() = 0;
