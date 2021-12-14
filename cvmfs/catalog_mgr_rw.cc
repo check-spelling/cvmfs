@@ -724,7 +724,7 @@ void WritableCatalogManager::TouchDirectory(const DirectoryEntryBase &entry,
     LogCvmfs(kLogCatalog, kLogVerboseMsg,
              "updating transition point at %s", entry_path.c_str());
 
-    // find and mount nested catalog assciated to this transition point
+    // find and mount nested catalog associated to this transition point
     shash::Any nested_hash;
     uint64_t nested_size;
     retval = catalog->FindNested(transition_path, &nested_hash, &nested_size);
