@@ -342,7 +342,7 @@ TEST_F(T_Util, IsHttpUrl) {
   EXPECT_FALSE(IsHttpUrl("https//foobar"));
 }
 
-TEST_F(T_Util, MakeCannonicalPath) {
+TEST_F(T_Util, MakeCanonicalPath) {
   EXPECT_EQ(empty, MakeCanonicalPath(empty));
   EXPECT_EQ(path_without_slash, MakeCanonicalPath(path_with_slash));
   EXPECT_EQ(path_without_slash, MakeCanonicalPath(path_without_slash));
