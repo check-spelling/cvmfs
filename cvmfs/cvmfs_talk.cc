@@ -32,7 +32,7 @@ struct InstanceInfo {
     bool retval = options_mgr.GetValue("CVMFS_DEFAULT_DOMAIN", &result);
     if (!retval) {
       LogCvmfs(kLogCvmfs, kLogStderr,
-               "Error: could not determin CVMFS_DEFAULT_DOMAIN");
+               "Error: could not determine CVMFS_DEFAULT_DOMAIN");
     }
     return result;
   }
