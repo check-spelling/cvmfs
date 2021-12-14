@@ -362,7 +362,7 @@ func RemoveSingularityImageFromManifest(CVMFSRepo string, manifest da.Manifest) 
 	}
 	err := RemoveDirectory(CVMFSRepo, manifest.GetSingularityPath())
 	if err != nil {
-		llog(l.LogE(err)).Error("Error in removing singularity direcotry")
+		llog(l.LogE(err)).Error("Error in removing singularity directory")
 		return err
 	}
 	return nil
