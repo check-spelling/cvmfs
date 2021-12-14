@@ -1288,7 +1288,7 @@ void WritableCatalogManager::CatalogUploadCallback(
 
 /**
  * Finds dirty catalogs that can be snapshot right away and annotates all the
- * other catalogs with their number of dirty decendants.
+ * other catalogs with their number of dirty descendants.
  * Note that there is a convenience wrapper to start the recursion:
  *   WritableCatalogManager::GetModifiedCatalogLeafs()
  *
