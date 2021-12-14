@@ -1011,7 +1011,7 @@ TEST_F(T_Util, CreateTempPath) {
 
   EXPECT_EQ("", file = CreateTempPath("/fakepath/myfakefile.txt", 0600));
   EXPECT_FALSE(FileExists(file));
-  EXPECT_NE("", file = CreateTempPath(sandbox + "/createmppath.txt",
+  EXPECT_NE("", file = CreateTempPath(sandbox + "/createtemppath.txt",
       0600));
   EXPECT_TRUE(FileExists(file));
 }
