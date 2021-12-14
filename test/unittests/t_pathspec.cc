@@ -604,7 +604,7 @@ TEST(T_Pathspec, MultiDirectoryWildcards) {
   EXPECT_FALSE(p5.IsMatching("/foo/ba"));
   EXPECT_FALSE(p5.IsMatching("foo/ban"));
   EXPECT_FALSE(p5.IsMatching("foo/bat"));
-  EXPECT_FALSE(p5.IsMatching("/foo/banary"));
+  EXPECT_FALSE(p5.IsMatching("/foo/binary"));
 
   EXPECT_TRUE(p5.IsMatchingRelaxed("/foo/ban"));
   EXPECT_TRUE(p5.IsMatchingRelaxed("/foo/bat"));
@@ -612,7 +612,7 @@ TEST(T_Pathspec, MultiDirectoryWildcards) {
   EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/ba"));
   EXPECT_FALSE(p5.IsMatchingRelaxed("foo/ban"));
   EXPECT_FALSE(p5.IsMatchingRelaxed("foo/bat"));
-  EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/banary"));
+  EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/binary"));
 }
 
 
