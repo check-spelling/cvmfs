@@ -2320,7 +2320,7 @@ struct sqlite3_mem_methods {
 ** the [VACUUM] command will fail with an obscure error when attempting to
 ** process a table with generated columns and a descending index.  This is
 ** not considered a bug since SQLite versions 3.3.0 and earlier do not support
-** either generated columns or decending indexes.
+** either generated columns or descending indexes.
 ** </dd>
 ** </dl>
 */
