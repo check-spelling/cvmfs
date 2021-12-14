@@ -63,8 +63,8 @@ namespace {
 /**
  * Used for cas  insensitive HasSuffix
  */
-struct IgnoreCaseComperator {
-  IgnoreCaseComperator() {}
+struct IgnoreCaseComparator {
+  IgnoreCaseComparator() {}
   bool operator()(const std::string::value_type a,
                   const std::string::value_type b) const {
     return std::tolower(a) == std::tolower(b);
@@ -279,7 +279,7 @@ bool HasPrefix(const string &str, const string &prefix,
 bool HasSuffix(const std::string &str, const std::string &suffix,
                const bool ignore_case) {
   if (suffix.size() > str.size()) return false;
-  const IgnoreCaseComperator icmp;
+  const IgnoreCaseComparator icmp;
   return (ignore_case)
              ? std::equal(suffix.rbegin(), suffix.rend(), str.rbegin(), icmp)
              : std::equal(suffix.rbegin(), suffix.rend(), str.rbegin());
