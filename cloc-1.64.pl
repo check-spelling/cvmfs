@@ -537,7 +537,7 @@ my $getopt_success = GetOptions(
    "lang_no_ext|lang-no-ext=s"               => \$opt_lang_no_ext         ,
    "yaml"                                    => \$opt_yaml                ,
    "csv"                                     => \$opt_csv                 ,
-   "csv_delimeter|csv-delimiter=s"           => \$opt_csv_delimiter       ,
+   "csv_delimiter|csv-delimiter=s"           => \$opt_csv_delimiter       ,
    "match_f|match-f=s"                       => \$opt_match_f             ,
    "not_match_f|not-match-f=s"               => \$opt_not_match_f         ,
    "match_d|match-d=s"                       => \$opt_match_d             ,
