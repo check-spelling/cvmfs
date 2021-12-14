@@ -92,7 +92,7 @@ class Statistics {
 
 /**
  * Allows multiple instance of the same class to use the same Statistics
- * instance.  The "name_major" part is used to contruct counter names in the
+ * instance.  The "name_major" part is used to construct counter names in the
  * form name_major.<provided name>
  */
 class StatisticsTemplate {
