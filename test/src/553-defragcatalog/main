@@ -45,7 +45,7 @@ cvmfs_run_test() {
   touch ${repo_dir}/foo/.cvmfscatalog || return 9
   touch ${repo_dir}/baz/.cvmfscatalog || return 10
 
-  echo "publish repository (should trigger root catalog defragmatation)"
+  echo "publish repository (should trigger root catalog defragmentation)"
   local publish_log_1="publish_1.log"
   publish_repo $CVMFS_TEST_REPO > $publish_log_1 2>&1 || return 11
   cat $publish_log_1 | grep '/ gets defragmented'     || return 11
