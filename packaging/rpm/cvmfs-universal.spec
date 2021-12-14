@@ -809,7 +809,7 @@ systemctl daemon-reload
 * Thu Feb 16 2012 Jakob Blomer <jblomer@cern.ch>
 - SuSE compatibility, disabled SELinux for SuSE
 * Wed Feb 15 2012 Jakob Blomer <jblomer@cern.ch>
-- Small adjustments to run with continueous integration
+- Small adjustments to run with continuous integration
 * Thu Jan 12 2012 Brian Bockelman <bbockelm@cse.unl.edu> - 2.0.13
 - Addition of SELinux support.
 
