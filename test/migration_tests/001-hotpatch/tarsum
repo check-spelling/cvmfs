@@ -52,7 +52,7 @@ def main():
            "With no FILE, or when FILE is -, read standard input.")
     parser = OptionParser(usage=usage, version=version)
     parser.add_option("-c", "--checksum", dest="checksum", type="string",
-        help="use HASH as for caclculating the checksums. [default: %default]", metavar="HASH",
+        help="use HASH as for calculating the checksums. [default: %default]", metavar="HASH",
         default="md5")
     parser.add_option("-o", "--output", dest="output", type="string",
         help="save signatures to FILE.", metavar="FILE")
