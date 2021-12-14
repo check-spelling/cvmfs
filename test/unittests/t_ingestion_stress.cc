@@ -436,7 +436,7 @@ TEST_F(T_IngestionStress, ProcessMultipleFilesSlow) {
   TestProcessFiles(pathes, hs);
 }
 
-TEST_F(T_IngestionStress, ProcessMultipeFilesWithoutChunkingSlow) {
+TEST_F(T_IngestionStress, ProcessMultipleFilesWithoutChunkingSlow) {
   std::vector<std::string> pathes;
   ExpectedHashStrings hs;
 

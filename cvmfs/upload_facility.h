@@ -151,7 +151,7 @@ class AbstractUploader
   /**
    * Concrete uploaders might want to use a customized setting for multi-stream
    * writing, for instance one per disk.  Note that the S3 backend uses one task
-   * but this one task uses internally mutliple HTTP streams through curl async
+   * but this one task uses internally multiple HTTP streams through curl async
    * I/O.
    */
   virtual unsigned GetNumTasks() const { return num_upload_tasks_; }
