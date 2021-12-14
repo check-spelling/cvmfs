@@ -32,7 +32,7 @@ cvmfs_run_test() {
   echo "starting transaction to edit repository"
   start_transaction $CVMFS_TEST_REPO || return $?
 
-  echo "createing nested catalog structure in repository"
+  echo "creating nested catalog structure in repository"
   produce_files_in $repo_dir || return 3
 
   echo "creating CVMFS snapshot"
