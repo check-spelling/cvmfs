@@ -1021,7 +1021,7 @@ TEST_F(T_Util, CreateTempDir) {
 
   EXPECT_EQ("", directory = CreateTempDir("/fakepath/myfakedirectory"));
   EXPECT_FALSE(DirectoryExists(directory));
-  EXPECT_NE("", directory = CreateTempDir(sandbox + "/creatempdirectory"))
+  EXPECT_NE("", directory = CreateTempDir(sandbox + "/createtempdirectory"))
     << errno;
   EXPECT_TRUE(DirectoryExists(directory)) << errno;
 }
