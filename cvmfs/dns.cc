@@ -225,7 +225,7 @@ void Host::CopyFrom(const Host &other) {
 
 
 /**
- * Creates a copy of the original host with a new ID and sets a new dealine
+ * Creates a copy of the original host with a new ID and sets a new deadline
  * given in seconds from the current time.
  */
 Host Host::ExtendDeadline(const Host &original, unsigned seconds_from_now) {
