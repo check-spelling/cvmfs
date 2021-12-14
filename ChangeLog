@@ -1451,7 +1451,7 @@
   * Fixed some multi-threading bugs
   * Switched to libcurl 7.21.3
   * Include timestamp in debug log
-  * Changed failover + load-balaning proxy syntax: introduced 3rd
+  * Changed failover + load-balancing proxy syntax: introduced 3rd
     level to specify load-balance blocks first, failover later
   * Proper mapping of file catalogs and whitelists to repository
     names
