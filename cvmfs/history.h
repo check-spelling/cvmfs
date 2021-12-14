@@ -204,7 +204,7 @@ class History {
 
   /**
    * Provides a list of all referenced catalog hashes in this History.
-   * The hashes will be ordered by their timestamp in acending order.
+   * The hashes will be ordered by their timestamp in ascending order.
    *
    * @param hashes  pointer to the result vector to be filled
    */
