@@ -129,7 +129,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 		i := n.AddField("image", inputImage.GetSimpleName()).AddId()
 		t1 := time.Now()
 		i.Action("start_single_chain_conversion").Send()
-		i = i.Action("end_single_chain_convertion")
+		i = i.Action("end_single_chain_conversion")
 
 		err, lastChain := inputImage.CreateSneakyChainStructure(wish.CvmfsRepo)
 		if err != nil {
