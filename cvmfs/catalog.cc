@@ -584,7 +584,7 @@ string Catalog::PrintMemStatistics() const {
 
 /**
  * Determine the actual inode of a DirectoryEntry.
- * The first used entry from a hardlink group deterimines the inode of the
+ * The first used entry from a hardlink group determines the inode of the
  * others.
  * @param row_id the row id of a read row in the sqlite database
  * @param hardlink_group the id of a possibly present hardlink group
