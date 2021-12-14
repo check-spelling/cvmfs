@@ -1178,7 +1178,7 @@ bool CommandMigrate::MigrationWorker_20x::AnalyzeFileLinkcounts(
   bool retval;
 
   // Analyze the hardlink relationships in the old catalog
-  //   inodes used to be assigned at publishing time, implicitly constituating
+  //   inodes used to be assigned at publishing time, implicitly constituting
   //   those relationships. We now need them explicitly in the file catalogs
   // This looks for directory entries with matching inodes but differing path-
   // hashes and saves the results in a temporary table called 'hl_scratch'
