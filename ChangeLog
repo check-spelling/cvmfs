@@ -412,7 +412,7 @@
   * Add RapidCheck for property based testing
   * Fix compilation on macOS 10.11+
   * Add stratum 1 agent for triggered replication
-  * Autmatically restart failed authz helper after a cool-off period
+  * Automatically restart failed authz helper after a cool-off period
   * Make `true` to be a valid boolean option
 
 2.4.5:
