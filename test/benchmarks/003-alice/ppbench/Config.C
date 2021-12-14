@@ -1314,28 +1314,28 @@ AliGenerator* GeneratorFactory(PprRun_t srun) {
         break;
       case kFlow_2_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 2%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 2%");
         gGener = GeVSimStandard(2000., 2.);
       }
         break;
         
       case kFlow_10_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 10%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 10%");
         gGener = GeVSimStandard(2000., 10.);
       }
         break;
         
       case kFlow_6_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 6%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 6%");
         gGener = GeVSimStandard(2000., 6.);
       }
         break;
         
       case kFlow_6_5000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 5000, vn = 6%");
+        comment = comment.Append(" Flow with dN/delta  = 5000, vn = 6%");
         gGener = GeVSimStandard(5000., 6.);
       }
         break;
@@ -1444,7 +1444,7 @@ AliGenGeVSim* GeVSimStandard(Float_t mult, Float_t vn)
   // Mult is the number of charged particles in |eta| < 0.5
   // Vn is in (%)
   //
-  // Sigma of the Gaussian dN/deta
+  // Sigma of the Gaussian dN/delta
   Float_t sigma_eta  = 2.75;
   //
   // Maximum eta
