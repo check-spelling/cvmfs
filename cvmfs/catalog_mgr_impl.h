@@ -312,7 +312,7 @@ bool AbstractCatalogManager<CatalogT>::LookupPath(const PathString &path,
     }
     assert(found);
   }
-  // Not in a nested catalog (because no nested cataog fits), ENOENT
+  // Not in a nested catalog (because no nested catalog fits), ENOENT
   if (!found) {
     LogCvmfs(kLogCatalog, kLogDebug, "ENOENT: '%s'", path.c_str());
     if (dirent != NULL) *dirent = dirent_negative;
