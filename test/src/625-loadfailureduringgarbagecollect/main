@@ -246,7 +246,7 @@ cvmfs_run_test() {
   echo "*** check that kafka ($kafka_object) is NOT in the deletion log (regression test CVM-966)"
   cat $deletion_log | grep -q $kafka_object && return 101
 
-  echo "*** do defered GC retcode check (for the regression test)"
+  echo "*** do deferred GC retcode check (for the regression test)"
   [ $gc_retcode -eq 0 ] || return 17
 
   echo "*** check that the error was caught"
