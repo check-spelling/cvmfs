@@ -194,7 +194,7 @@ class __attribute__((visibility("default"))) Publisher : public Repository {
      */
     void Mount();
     /**
-     * Move scratch space to waste bin and clear it out asynchonously
+     * Move scratch space to waste bin and clear it out asynchronously
      */
     void ClearScratch();
 
