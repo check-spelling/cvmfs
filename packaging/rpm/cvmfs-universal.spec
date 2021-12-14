@@ -416,7 +416,7 @@ rm -f $RPM_BUILD_ROOT/etc/cvmfs/domain.d/*.conf
 rm -f $RPM_BUILD_ROOT/etc/cvmfs/default.d/*.conf
 rm -f $RPM_BUILD_ROOT/etc/cvmfs/serverorder.sh
 
-# Don't install coincidentially built libfuse3 libraries
+# Don't install coincidentally built libfuse3 libraries
 %if ! 0%{?build_fuse3}
 rm -f $RPM_BUILD_ROOT%{_libdir}/libcvmfs_fuse3*
 %endif
