@@ -28,7 +28,7 @@
      # perfectly: we just don't complain if the last non-whitespace character on
      # the previous non-blank line is ',', ';', ':', '(', '{', or '}', or if the
      # previous line starts a preprocessor block.
-+    # Additionall allow an open brace when the previous line is a multi line
++    # Additionally allow an open brace when the previous line is a multi line
 +    # method signature or if/for/while statement.  That is: previous line ends
 +    # on ) or const (t).
      prevline = GetPreviousNonBlankLine(clean_lines, linenum)[0]
