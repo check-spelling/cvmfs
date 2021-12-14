@@ -872,7 +872,7 @@
   * Fix automounter map on EL6.2 (CVM-601)
   * Log to syslog in addition to stderr when debug log cannot
     be opened (CVM-273)
-  * Fix false parsing of /etc/cvmfs/domaind.d/cern.ch.* on mount
+  * Fix false parsing of /etc/cvmfs/domain.d/cern.ch.* on mount
     (CVM-600)
   * Improve error logging when loading the cvmfs library (cf. CVM-595)
   * Fix crash in exclusive cache mode if unpin listener is called
