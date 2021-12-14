@@ -327,8 +327,8 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 		}
 	}
 
-	layersChanell := make(chan downloadedLayer, 10)
-	manifestChanell := make(chan string, 1)
+	layersChannel := make(chan downloadedLayer, 10)
+	manifestChannel := make(chan string, 1)
 	stopGettingLayers := make(chan bool, 1)
 	noErrorInConversion := make(chan bool, 1)
 
@@ -350,7 +350,7 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 			close(stopGettingLayers)
 		}()
 
-		for layer := range layersChanell {
+		for layer := range layersChannel {
 
 			l.Log().WithFields(log.Fields{"layer": layer.Name}).Info("Start Ingesting the file into CVMFS")
 			layerDigest := strings.Split(layer.Name, ":")[1]
@@ -408,8 +408,8 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 	}
 	defer os.RemoveAll(tmpDir)
 
-	// this wil start to feed the above goroutine by writing into layersChanell
-	err = inputImage.GetLayers(layersChanell, manifestChanell, stopGettingLayers, tmpDir)
+	// this wil start to feed the above goroutine by writing into layersChannel
+	err = inputImage.GetLayers(layersChannel, manifestChannel, stopGettingLayers, tmpDir)
 	if err != nil {
 		return err
 	}
@@ -438,7 +438,7 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 
 	if noErrorInConversionValue {
 		manifestPath := filepath.Join(".metadata", inputImage.GetSimpleName(), "manifest.json")
-		errIng := cvmfs.PublishToCVMFS(repo, manifestPath, <-manifestChanell)
+		errIng := cvmfs.PublishToCVMFS(repo, manifestPath, <-manifestChannel)
 		if errIng != nil {
 			l.LogE(errIng).Error("Error in storing the manifest in the repository")
 		}
