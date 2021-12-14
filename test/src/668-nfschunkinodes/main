@@ -77,7 +77,7 @@ cvmfs_run_test() {
   ls -lisa ${mntpnt}/dir/*
   [ "x$(tail -n 1 ${mntpnt}/dir/large)" = "xn" ] || return 50
 
-  echo "*** verify that our open tail processes did acutally run"
+  echo "*** verify that our open tail processes did actually run"
   /bin/kill -TERM $TEST668_TAIL_PID || return 61
   TEST668_TAIL_PID=
 
