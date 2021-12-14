@@ -492,7 +492,7 @@ unsigned GetContextSize(const Algorithms algorithm);
 
 /**
  * Holds an OpenSSL context, only required for hash operations.  Allows to
- * deferr the storage allocation for the context to alloca.
+ * defer the storage allocation for the context to alloca.
  */
 class ContextPtr {
  public:
