@@ -40,8 +40,8 @@ static void Usage(const std::string &progname,
     "Usage:\n"
     "------\n"
     "  %s COMMAND [options] <parameters>\n\n"
-    "Supported Commmands\n"
-    "-------------------\n",
+    "Supported Commands\n"
+    "------------------\n",
     VERSION, progname.c_str());
     const vector<publish::Command *> commands = clist.commands();
 
