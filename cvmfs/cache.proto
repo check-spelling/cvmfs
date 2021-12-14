@@ -80,7 +80,7 @@ enum EnumCapabilities {
   CAP_SHRINK_RATE = 16;  // cache knows number of cleanup operations
   CAP_LIST        = 32;  // cache can return a list of objects
   CAP_ALL_V1      = 63;
-  CAP_BREADCRUMB  = 64;  // cache can load and store breadcrumps
+  CAP_BREADCRUMB  = 64;  // cache can load and store breadcrumbs
   CAP_ALL_V2      = 127;
 }
 
