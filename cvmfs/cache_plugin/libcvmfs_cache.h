@@ -65,7 +65,7 @@ enum cvmcache_capabilities {
   // A read-only cache needs to be pre-populated by other means
   CVMCACHE_CAP_WRITE       = 1,
   // Proper refcounting is implemented; for lower tier caches, this capability
-  // can be unset and reference counting can simply beomce file existence check
+  // can be unset and reference counting can simply become file existence check
   CVMCACHE_CAP_REFCOUNT    = 2,
   CVMCACHE_CAP_SHRINK      = 4,   // clients can ask the cache to shrink
   CVMCACHE_CAP_INFO        = 8,   // cache plugin knows about its fill level
