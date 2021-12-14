@@ -124,7 +124,7 @@ class SettingsSpoolArea {
   Setting<std::string> tmp_dir_;
   Setting<std::string> union_mnt_;
   /**
-   * How aggresively should the mount point stack be repaired
+   * How aggressively should the mount point stack be repaired
    */
   Setting<EUnionMountRepairMode> repair_mode_;
 };  // SettingsSpoolArea
