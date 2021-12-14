@@ -42,7 +42,7 @@ reload_apache() {
 }
 
 
-# An Apache reload is asynchronous, the new configration is not immediately
+# An Apache reload is asynchronous, the new configuration is not immediately
 # accessible.  Wait up to 1 minute until a test url can be fetched
 wait_for_apache() {
   local url="$1"
