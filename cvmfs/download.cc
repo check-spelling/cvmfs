@@ -1867,7 +1867,7 @@ void DownloadManager::SetIpPreference(dns::IpPreference preference) {
 
 
 /**
- * Sets two timeout values for proxied and for direct conections, respectively.
+ * Sets two timeout values for proxied and for direct connections, respectively.
  * The timeout counts for all sorts of connection phases,
  * DNS, HTTP connect, etc.
  */
