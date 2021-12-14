@@ -218,7 +218,7 @@ class Recorder {
 
 
 /**
- * Writes to multiple recorders.  Recorders with coarsed-grained resolution and
+ * Writes to multiple recorders.  Recorders with coarse resolution and
  * a large capacity are combined with precise recorders with shorter capacity.
  * Preferred recorders should be added first because GetNoTicks will use the
  * first recorder with a capacity >= retrospect_s (or the last recorder).
