@@ -73,7 +73,7 @@ class __attribute__((visibility("default"))) DiffListener {
 class __attribute__((visibility("default"))) Env {
  public:
   /**
-   * Depending on the desired course of action, the permitted capabilites of the
+   * Depending on the desired course of action, the permitted capabilities of the
    * binary (cap_dac_read_search, cap_sys_admin) needs to be dropped or gained.
    * Dropped for creating user namespaces in `enter`, gained for walking through
    * overlayfs.
