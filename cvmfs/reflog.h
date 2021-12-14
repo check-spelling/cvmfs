@@ -25,7 +25,7 @@ namespace manifest {
  *
  * Every time such an object is newly added to a backend storage of CernVM-FS
  * its content hash (and object type) will be added to the Reflog. This ensures
- * an authorative list of "root objects" in a given backend storage.
+ * an authoritative list of "root objects" in a given backend storage.
  *
  * Reflogs are associated to a specific backend storage of Stratum0 or Stratum1
  * and _not_ to a CernVM-FS repository. Thus, the Reflogs of Stratum0 and its
