@@ -71,14 +71,14 @@ cvmfs_run_test() {
     echo "There is a missmatch between the number of deletions printed and the ones performed" && return 25
   fi
 
-  echo "*** Start transaction for testing printing of dots in additons"
+  echo "*** Start transaction for testing printing of dots in additions"
   start_transaction $CVMFS_TEST_REPO || return 30
   echo "*** Create hundreds of folders"
   for ii in {0..500}
   do
     mkdir /cvmfs/$CVMFS_TEST_REPO/"folder${ii}" || return 31
   done
-  echo "*** Publish transaction for testing printing of dots in additons"
+  echo "*** Publish transaction for testing printing of dots in additions"
   cvmfs_server publish $CVMFS_TEST_REPO | tee logfile4.txt || return 32
 
   add_dots=$(grep -x "....." logfile4.txt | wc -l)
