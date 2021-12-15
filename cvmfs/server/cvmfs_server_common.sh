@@ -299,7 +299,7 @@ get_published_root_hash() {
 # retrieves the current manifest without signature
 #
 # @param repository_name   the name of the repository to be checked
-# @return                  echoes the published manufest
+# @return                  echoes the published manifest
 get_raw_manifest() {
   local repository_name=$1
 
