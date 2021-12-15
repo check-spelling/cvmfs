@@ -360,7 +360,7 @@ class AbstractUploader
                               const CallbackTN *callback) = 0;
 
   /**
-   * Implemetation of streamed upload commit
+   * Implementation of streamed upload commit
    * Public interface: AbstractUploader::ScheduleUpload()
    *
    * @param handle        descendant of UploadStreamHandle specifying the stream

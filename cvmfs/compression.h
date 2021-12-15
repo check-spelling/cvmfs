@@ -54,7 +54,7 @@ enum Algorithms {
  * which is a sub-class of the Compressor.  The subclass needs to implement the
  * Deflate, DeflateBound, Clone, and WillHandle functions.  For information on
  * the WillHandle function, read up on the PolymorphicConstruction class.
- * The new sub-class must be listed in the implemention of the
+ * The new sub-class must be listed in the implementation of the
  * Compressor::RegisterPlugins function.
  *
  */
