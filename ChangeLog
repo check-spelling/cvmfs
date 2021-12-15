@@ -983,7 +983,7 @@
   * Fix various issues with reading of chunked files
   * Decrease memory consumption of the inode tracker
   * Remove trailing empty attribute in listattr callback
-  * Make repositories replicatable by default
+  * Make repositories replicable by default
   * Experimental support for repository tags (named snapshots).
     Allows to mount a specific repository version and to rollback
     and re-publish previous repository states.
