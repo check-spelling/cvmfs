@@ -169,7 +169,7 @@ class SqlCatalog : public sqlite::Sql {
 
 
 /**
- * Common ancestor of SQL statemnts that deal with directory entries.
+ * Common ancestor of SQL statements that deal with directory entries.
  */
 class SqlDirent : public SqlCatalog {
  public:

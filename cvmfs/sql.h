@@ -36,7 +36,7 @@ struct MemStatistics {
   int page_cache_hit;
   int page_cache_miss;
   int schema_used;  ///< Bytes used to store db schema
-  int stmt_used;  ///< Bytes used for prepared statmements (lookaside + heap)
+  int stmt_used;  ///< Bytes used for prepared statements (lookaside + heap)
 };
 
 class Sql;
