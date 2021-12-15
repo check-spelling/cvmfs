@@ -428,7 +428,7 @@ class AbstractUploader
   const SpoolerDefinition spooler_definition_;
 
   /**
-   * Number of threads used for I/O write calls. Effectively this paramater
+   * Number of threads used for I/O write calls. Effectively this parameter
    * sets the I/O depth. Defaults to 1.
    */
   unsigned num_upload_tasks_;
