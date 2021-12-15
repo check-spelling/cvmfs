@@ -1086,7 +1086,7 @@ bool WritableCatalogManager::Commit(const bool           stop_for_tweaks,
 
 /**
  * Handles the snapshotting of dirty (i.e. modified) catalogs while trying to
- * parallize the compression and upload as much as possible. We use a parallel
+ * parallelize the compression and upload as much as possible. We use a parallel
  * depth first post order tree traversal based on 'continuations'.
  *
  * The idea is as follows:
