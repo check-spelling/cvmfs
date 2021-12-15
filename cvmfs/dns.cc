@@ -275,7 +275,7 @@ bool Host::IsEquivalent(const Host &other) const {
 
 
 /**
- * Compares the TTL from a provious call to time() with the current time.
+ * Compares the TTL from a previous call to time() with the current time.
  */
 bool Host::IsExpired() const {
   time_t now = time(NULL);
