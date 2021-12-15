@@ -214,7 +214,7 @@ struct Digest {
    * Generates a purely random hash
    * Only used for testing purposes
    *
-   * @param seed  random number generator seed (for reproducability)
+   * @param seed  random number generator seed (for reproducibility)
    */
   void Randomize(const uint64_t seed) {
     Prng prng;
@@ -226,7 +226,7 @@ struct Digest {
    * Generates a purely random hash
    * Only used for testing purposes
    *
-   * @param prng  random number generator object (for external reproducability)
+   * @param prng  random number generator object (for external reproducibility)
    */
   void Randomize(Prng *prng) {
     const unsigned bytes = GetDigestSize();
