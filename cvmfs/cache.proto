@@ -297,7 +297,7 @@ message MsgListReq {
 }
 
 // The cache manager decides how many objects are in each part.  The cache
-// manager assignes a unique listing id so that clients can continue to query
+// manager assigns a unique listing id so that clients can continue to query
 // for more listings.
 message MsgListReply {
   required uint64 req_id             = 1;
