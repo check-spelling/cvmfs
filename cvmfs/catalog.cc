@@ -790,7 +790,7 @@ Catalog* Catalog::FindSubtree(const PathString &path) const {
       result = FindChild(path_prefix);
 
       // If we found a child serving a part of the path we can stop searching.
-      // Remaining sub path elements are possbily served by a grand child.
+      // Remaining sub path elements are possibly served by a grand child.
       if (result != NULL)
         break;
     }
