@@ -21,7 +21,7 @@ cvmfs_run_test() {
   src_location=$2
   local repo_dir=/cvmfs/$CVMFS_TEST_REPO
 
-  local replica_name="${CVMFS_TEST_REPO}.replic"
+  local replica_name="${CVMFS_TEST_REPO}.replica"
   local s1_mnt_point="$(pwd)/s1_mnt"
 
   local scratch_dir=$(pwd)

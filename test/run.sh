@@ -77,7 +77,7 @@ fi
 echo "Start test suite for cvmfs $(cvmfs2 --version)" > $logfile
 date >> $logfile
 
-# read command line paramters
+# read command line parameters
 shift
 test_exclusions=0
 xml_output=""
@@ -270,7 +270,7 @@ do
 
   wc -l < $logfile > ${scratchdir}/log_begin
 
-  cvmfs_test_autofs_on_startup=true # might be overwritten by some tests
+  cvmfs_test_autofs_on_startup=true # might be overridden by some tests
   if ! . $t/main; then
     report_failure "failed to source $t/main" >> $logfile
     echo "101" > ${scratchdir}/retval

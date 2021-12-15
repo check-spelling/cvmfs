@@ -405,63 +405,63 @@ TEST_F(T_IngestionStress, ProcessBigFileWithoutChunks) {
 }
 
 TEST_F(T_IngestionStress, ProcessMultipleFilesSlow) {
-  std::vector<std::string> pathes;
+  std::vector<std::string> paths;
   ExpectedHashStrings hs;
 
-  pathes.push_back(GetSmallFile());
+  paths.push_back(GetSmallFile());
   hs.push_back(GetSmallFileBulkHash());
 
-  pathes.push_back(GetEmptyFile());
+  paths.push_back(GetEmptyFile());
   hs.push_back(GetEmptyFileBulkHash());
 
-  pathes.push_back(GetBigFile());
+  paths.push_back(GetBigFile());
   hs.push_back(GetBigFileBulkHash());
   AppendVectorToVector(GetBigFileChunkHashes(), &hs);
 
-  pathes.push_back(GetHugeFile());
+  paths.push_back(GetHugeFile());
   hs.push_back(GetHugeFileBulkHash());
   AppendVectorToVector(GetHugeFileChunkHashes(), &hs);
 
-  pathes.push_back(GetHugeFile());
+  paths.push_back(GetHugeFile());
   hs.push_back(GetHugeFileBulkHash());
   AppendVectorToVector(GetHugeFileChunkHashes(), &hs);
 
-  pathes.push_back(GetSmallFile());
+  paths.push_back(GetSmallFile());
   hs.push_back(GetSmallFileBulkHash());
 
-  pathes.push_back(GetBigFile());
+  paths.push_back(GetBigFile());
   hs.push_back(GetBigFileBulkHash());
   AppendVectorToVector(GetBigFileChunkHashes(), &hs);
 
-  TestProcessFiles(pathes, hs);
+  TestProcessFiles(paths, hs);
 }
 
-TEST_F(T_IngestionStress, ProcessMultipeFilesWithoutChunkingSlow) {
-  std::vector<std::string> pathes;
+TEST_F(T_IngestionStress, ProcessMultipleFilesWithoutChunkingSlow) {
+  std::vector<std::string> paths;
   ExpectedHashStrings hs;
 
-  pathes.push_back(GetEmptyFile());
+  paths.push_back(GetEmptyFile());
   hs.push_back(GetEmptyFileBulkHash());
 
-  pathes.push_back(GetHugeFile());
+  paths.push_back(GetHugeFile());
   hs.push_back(GetHugeFileBulkHash());
 
-  pathes.push_back(GetBigFile());
+  paths.push_back(GetBigFile());
   hs.push_back(GetBigFileBulkHash());
 
-  pathes.push_back(GetHugeFile());
+  paths.push_back(GetHugeFile());
   hs.push_back(GetHugeFileBulkHash());
 
-  pathes.push_back(GetHugeFile());
+  paths.push_back(GetHugeFile());
   hs.push_back(GetHugeFileBulkHash());
 
-  pathes.push_back(GetSmallFile());
+  paths.push_back(GetSmallFile());
   hs.push_back(GetSmallFileBulkHash());
 
-  pathes.push_back(GetBigFile());
+  paths.push_back(GetBigFile());
   hs.push_back(GetBigFileBulkHash());
 
-  TestProcessFiles(pathes, hs,
+  TestProcessFiles(paths, hs,
                    true,  /* legacy bulk */
                    false  /* chunking */);
 }

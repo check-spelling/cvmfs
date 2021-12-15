@@ -455,7 +455,7 @@ TEST_F(T_CacheManager, CommitTxnSizeMismatch) {
   EXPECT_EQ(-EIO, cache_mgr_->CommitTxn(txn));
   unsigned char *buf;
   unsigned buf_size;
-  EXPECT_TRUE(CopyPath2Mem(tmp_path_ + "/quarantaine/" + rnd_hash.ToString(),
+  EXPECT_TRUE(CopyPath2Mem(tmp_path_ + "/quarantine/" + rnd_hash.ToString(),
                            &buf, &buf_size));
   EXPECT_EQ(1U, buf_size);
   EXPECT_EQ(content, buf[0]);

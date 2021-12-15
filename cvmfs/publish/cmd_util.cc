@@ -24,18 +24,18 @@ int publish::CallServerHook(const std::string &func,
 
   int pipe_stdin[2];
   MakePipe(pipe_stdin);
-  std::set<int> preserve_fildes;
-  preserve_fildes.insert(0);
-  preserve_fildes.insert(1);
-  preserve_fildes.insert(2);
-  std::map<int, int> map_fildes;
-  map_fildes[pipe_stdin[0]] = 0;  // Reading end of pipe_stdin
+  std::set<int> preserve_filedes;
+  preserve_filedes.insert(0);
+  preserve_filedes.insert(1);
+  preserve_filedes.insert(2);
+  std::map<int, int> map_filedes;
+  map_filedes[pipe_stdin[0]] = 0;  // Reading end of pipe_stdin
   std::vector<std::string> cmd_line;
   cmd_line.push_back("/bin/sh");
   pid_t child_pid;
   bool rvb = ManagedExec(cmd_line,
-                         preserve_fildes,
-                         map_fildes,
+                         preserve_filedes,
+                         map_filedes,
                          false /* drop_credentials */,
                          false /* clear_env */,
                          false /* double_fork */,

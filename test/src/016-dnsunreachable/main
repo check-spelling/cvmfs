@@ -33,9 +33,9 @@ cvmfs_run_test() {
   echo "timeout was $milliseconds seconds"
 
   # Unreachable name server should fail immediately
-  local expected_timout_max=2000
-  if [ $milliseconds -gt $expected_timout_max ]; then
-    echo "timeout was too long: $milliseconds (expected at most $expected_timout_max)"
+  local expected_timeout_max=2000
+  if [ $milliseconds -gt $expected_timeout_max ]; then
+    echo "timeout was too long: $milliseconds (expected at most $expected_timeout_max)"
     CVMFS_TIME_WARNING_FLAG=1
   fi
 

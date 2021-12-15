@@ -19,13 +19,13 @@ cvmfs_run_test() {
   create_empty_repo $CVMFS_TEST_REPO $CVMFS_TEST_USER || return $?
   create_empty_repo $CVMFS_TEST_REPO_MORE $CVMFS_TEST_USER NO -v || return $?
 
-  echo "ceating 20M in normal repository"
+  echo "creating 20M in normal repository"
   start_transaction $CVMFS_TEST_REPO || return $?
   dd if=/dev/zero of=/cvmfs/$CVMFS_TEST_REPO/normal01 bs=1024 count=10240
   dd if=/dev/zero of=/cvmfs/$CVMFS_TEST_REPO/normal02 bs=1024 count=10241
   publish_repo $CVMFS_TEST_REPO || return $?
 
-  echo "ceating 20M in volatile repository"
+  echo "creating 20M in volatile repository"
   start_transaction $CVMFS_TEST_REPO_MORE || return $?
   dd if=/dev/zero of=/cvmfs/$CVMFS_TEST_REPO_MORE/volatile01 bs=1024 count=10242
   dd if=/dev/zero of=/cvmfs/$CVMFS_TEST_REPO_MORE/volatile02 bs=1024 count=10243

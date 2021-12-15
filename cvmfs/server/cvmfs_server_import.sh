@@ -5,7 +5,7 @@
 #
 # Implementation of the "cvmfs_server import" command
 
-# This file depends on fuctions implemented in the following files:
+# This file depends on functions implemented in the following files:
 # - cvmfs_server_util.sh
 # - cvmfs_server_common.sh
 # - cvmfs_server_ssl.sh
@@ -31,7 +31,7 @@ _import_desaster_cleanup() {
 
   if [ $IMPORT_DESASTER_MANIFEST_SIGNED -ne 0 ] && \
      [ x$IMPORT_DESASTER_MANIFEST_BACKUP != x"" ]; then
-    echo "Manifest was overwritten. If needed here is a backup: $IMPORT_DESASTER_MANIFEST_BACKUP"
+    echo "Manifest was overridden. If needed here is a backup: $IMPORT_DESASTER_MANIFEST_BACKUP"
   fi
 }
 

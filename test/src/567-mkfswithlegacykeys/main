@@ -122,7 +122,7 @@ cvmfs_run_test() {
   echo "*** recreate the repository with keys being in place and provide an import location (should fail)"
   create_repo $CVMFS_TEST_REPO $CVMFS_TEST_USER NO -k $keys_stash && return 6
 
-  echo "*** check that the keys haven't been overwritten"
+  echo "*** check that the keys haven't been overridden"
   check_keys_existence "$keys_location" "$keys"              || return 7
   check_keys_validity "$keys_location" "$keys_stash" "$keys" && return 8
 

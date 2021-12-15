@@ -69,16 +69,16 @@ BEGIN {
     }
 }
 
-my $HAVE_Algorith_Diff = 0;
+my $HAVE_Algorithm_Diff = 0;
 # Algorithm::Diff isn't in the standard distribution.  It will
 # be installed in a temp directory if necessary.
 eval "use Algorithm::Diff qw ( sdiff ) ";
 if (defined $Algorithm::Diff::VERSION) {
-    $HAVE_Algorith_Diff = 1;
+    $HAVE_Algorithm_Diff = 1;
 } else {
     Install_Algorithm_Diff();
 }
-# print "2 HAVE_Algorith_Diff = $HAVE_Algorith_Diff\n";
+# print "2 HAVE_Algorithm_Diff = $HAVE_Algorithm_Diff\n";
 # test_alg_diff($ARGV[$#ARGV - 1], $ARGV[$#ARGV]); die;
 
 # Uncomment next two lines when building Windows executable with perl2exe
@@ -537,7 +537,7 @@ my $getopt_success = GetOptions(
    "lang_no_ext|lang-no-ext=s"               => \$opt_lang_no_ext         ,
    "yaml"                                    => \$opt_yaml                ,
    "csv"                                     => \$opt_csv                 ,
-   "csv_delimeter|csv-delimiter=s"           => \$opt_csv_delimiter       ,
+   "csv_delimiter|csv-delimiter=s"           => \$opt_csv_delimiter       ,
    "match_f|match-f=s"                       => \$opt_match_f             ,
    "not_match_f|not-match-f=s"               => \$opt_not_match_f         ,
    "match_d|match-d=s"                       => \$opt_match_d             ,
@@ -8225,7 +8225,7 @@ for my $meth (  qw(
 EOAlgDiff
 # 2}}}
     my $problems        = 0;
-    $HAVE_Algorith_Diff = 0;
+    $HAVE_Algorithm_Diff = 0;
     my $dir             = "";
     if ($opt_sdir) {
         ++$TEMP_OFF;
@@ -8254,7 +8254,7 @@ EOAlgDiff
 
     push @INC, $dir;  # between this & Regexp::Common only need to do once
     eval "use Algorithm::Diff qw / sdiff /";
-    $HAVE_Algorith_Diff = 1 unless $problems;
+    $HAVE_Algorithm_Diff = 1 unless $problems;
 } # 1}}}
 sub call_regexp_common {                     # {{{1
     my ($ra_lines, $language ) = @_;

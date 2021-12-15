@@ -88,8 +88,8 @@ class SmallHashBase {
 
   void Insert(const Key &key, const Value &value) {
     static_cast<Derived *>(this)->Grow();  // No-op if fixed-size
-    const bool overwritten = DoInsert(key, value, true);
-    size_ += !overwritten;  // size + 1 if the key was not yet in the map
+    const bool overridden = DoInsert(key, value, true);
+    size_ += !overridden;  // size + 1 if the key was not yet in the map
   }
 
   void Erase(const Key &key) {
@@ -171,20 +171,20 @@ class SmallHashBase {
     v = NULL;
   }
 
-  // Returns true iff the key is overwritten
+  // Returns true iff the key is overridden
   bool DoInsert(const Key &key, const Value &value,
                 const bool count_collisions)
   {
     uint32_t bucket;
     uint32_t collisions;
-    const bool overwritten = DoLookup(key, &bucket, &collisions);
+    const bool overridden = DoLookup(key, &bucket, &collisions);
     if (count_collisions) {
       num_collisions_ += collisions;
       max_collisions_ = std::max(collisions, max_collisions_);
     }
     keys_[bucket] = key;
     values_[bucket] = value;
-    return overwritten;
+    return overridden;
   }
 
   bool DoLookup(const Key &key, uint32_t *bucket, uint32_t *collisions) const {

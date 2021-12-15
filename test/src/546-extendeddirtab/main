@@ -1,5 +1,5 @@
 
-cvmfs_test_name="Advanced Nested Catalogs Managagement Using .cvmfsdirtab"
+cvmfs_test_name="Advanced Nested Catalogs Management Using .cvmfsdirtab"
 cvmfs_test_autofs_on_startup=false
 cvmfs_test_suites="quick"
 

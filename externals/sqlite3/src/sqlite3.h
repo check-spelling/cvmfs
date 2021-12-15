@@ -913,7 +913,7 @@ struct sqlite3_io_methods {
 ** in order for the database to be readable.  The fourth parameter to
 ** [sqlite3_file_control()] for this opcode should be a pointer to an integer.
 ** That integer is 0 to disable persistent WAL mode or 1 to enable persistent
-** WAL mode.  If the integer is -1, then it is overwritten with the current
+** WAL mode.  If the integer is -1, then it is overridden with the current
 ** WAL persistence setting.
 **
 ** <li>[[SQLITE_FCNTL_POWERSAFE_OVERWRITE]]
@@ -923,13 +923,13 @@ struct sqlite3_io_methods {
 ** xDeviceCharacteristics methods. The fourth parameter to
 ** [sqlite3_file_control()] for this opcode should be a pointer to an integer.
 ** That integer is 0 to disable zero-damage mode or 1 to enable zero-damage
-** mode.  If the integer is -1, then it is overwritten with the current
+** mode.  If the integer is -1, then it is overridden with the current
 ** zero-damage mode setting.
 **
 ** <li>[[SQLITE_FCNTL_OVERWRITE]]
 ** ^The [SQLITE_FCNTL_OVERWRITE] opcode is invoked by SQLite after opening
 ** a write transaction to indicate that, unless it is rolled back for some
-** reason, the entire database file will be overwritten by the current 
+** reason, the entire database file will be overridden by the current 
 ** transaction. This is used by VACUUM operations.
 **
 ** <li>[[SQLITE_FCNTL_VFSNAME]]
@@ -1004,7 +1004,7 @@ struct sqlite3_io_methods {
 ** maximum number of bytes that will be used for memory-mapped I/O.
 ** The argument is a pointer to a value of type sqlite3_int64 that
 ** is an advisory maximum number of bytes in the file to memory map.  The
-** pointer is overwritten with the old value.  The limit is not changed if
+** pointer is overridden with the old value.  The limit is not changed if
 ** the value originally pointed to is negative, and so the current limit 
 ** can be queried by passing in a pointer to a negative number.  This
 ** file-control is used internally to implement [PRAGMA mmap_size].
@@ -1091,7 +1091,7 @@ struct sqlite3_io_methods {
 ** obtain a file lock using the xLock or xShmLock methods of the VFS. 
 ** The parameter is a pointer to a 32-bit signed integer that contains
 ** the value that M is to be set to. Before returning, the 32-bit signed
-** integer is overwritten with the previous value of M.
+** integer is overridden with the previous value of M.
 **
 ** <li>[[SQLITE_FCNTL_DATA_VERSION]]
 ** The [SQLITE_FCNTL_DATA_VERSION] opcode is used to detect changes to
@@ -2320,7 +2320,7 @@ struct sqlite3_mem_methods {
 ** the [VACUUM] command will fail with an obscure error when attempting to
 ** process a table with generated columns and a descending index.  This is
 ** not considered a bug since SQLite versions 3.3.0 and earlier do not support
-** either generated columns or decending indexes.
+** either generated columns or descending indexes.
 ** </dd>
 ** </dl>
 */
@@ -3545,7 +3545,7 @@ SQLITE_API int sqlite3_open_v2(
 ** as F) must be one of:
 ** <ul>
 ** <li> A database filename pointer created by the SQLite core and
-** passed into the xOpen() method of a VFS implemention, or
+** passed into the xOpen() method of a VFS implementation, or
 ** <li> A filename obtained from [sqlite3_db_filename()], or
 ** <li> A new filename constructed using [sqlite3_create_filename()].
 ** </ul>
@@ -3658,7 +3658,7 @@ SQLITE_API sqlite3_file *sqlite3_database_file_object(const char*);
 /*
 ** CAPI3REF: Create and Destroy VFS Filenames
 **
-** These interfces are provided for use by [VFS shim] implementations and
+** These interfaces are provided for use by [VFS shim] implementations and
 ** are not useful outside of that context.
 **
 ** The sqlite3_create_filename(D,J,W,N,P) allocates memory to hold a version of
@@ -3739,7 +3739,7 @@ SQLITE_API void sqlite3_free_filename(char*);
 ** text that describes the error, as either UTF-8 or UTF-16 respectively.
 ** ^(Memory to hold the error message string is managed internally.
 ** The application does not need to worry about freeing the result.
-** However, the error string might be overwritten or deallocated by
+** However, the error string might be overridden or deallocated by
 ** subsequent calls to other SQLite interface functions.)^
 **
 ** ^The sqlite3_errstr() interface returns the English-language text
@@ -7289,7 +7289,7 @@ SQLITE_API int sqlite3_blob_read(sqlite3_blob *, void *Z, int N, int iOffset);
 ** error code of [SQLITE_ABORT].  ^Writes to the BLOB that occurred
 ** before the [BLOB handle] expired are not rolled back by the
 ** expiration of the handle, though of course those changes might
-** have been overwritten by the statement that expired the BLOB handle
+** have been overridden by the statement that expired the BLOB handle
 ** or by other independent statements.
 **
 ** This routine only works on a [BLOB handle] which has been created
@@ -9149,7 +9149,7 @@ SQLITE_API int sqlite3_vtab_config(sqlite3*, int op, ...);
 ** [[SQLITE_VTAB_DIRECTONLY]]<dt>SQLITE_VTAB_DIRECTONLY</dt>
 ** <dd>Calls of the form
 ** [sqlite3_vtab_config](db,SQLITE_VTAB_DIRECTONLY) from within the
-** the [xConnect] or [xCreate] methods of a [virtual table] implmentation
+** the [xConnect] or [xCreate] methods of a [virtual table] implementation
 ** prohibits that virtual table from being used from within triggers and
 ** views.
 ** </dd>
@@ -9157,7 +9157,7 @@ SQLITE_API int sqlite3_vtab_config(sqlite3*, int op, ...);
 ** [[SQLITE_VTAB_INNOCUOUS]]<dt>SQLITE_VTAB_INNOCUOUS</dt>
 ** <dd>Calls of the form
 ** [sqlite3_vtab_config](db,SQLITE_VTAB_INNOCUOUS) from within the
-** the [xConnect] or [xCreate] methods of a [virtual table] implmentation
+** the [xConnect] or [xCreate] methods of a [virtual table] implementation
 ** identify that virtual table as being safe to use from within triggers
 ** and views.  Conceptually, the SQLITE_VTAB_INNOCUOUS tag means that the
 ** virtual table can do no serious harm even if it is controlled by a
@@ -9576,7 +9576,7 @@ SQLITE_API SQLITE_EXPERIMENTAL int sqlite3_snapshot_get(
 ** if schema S does not exist, or if the snapshot object is invalid.
 **
 ** ^A call to sqlite3_snapshot_open() will fail to open if the specified
-** snapshot has been overwritten by a [checkpoint]. In this case 
+** snapshot has been overridden by a [checkpoint]. In this case 
 ** SQLITE_ERROR_SNAPSHOT is returned.
 **
 ** If there is already a read transaction open when this function is 

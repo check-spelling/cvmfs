@@ -192,16 +192,16 @@ static void *MainCheck(void *data __attribute__((unused))) {
         }
         if (hash != expected_hash) {
           if (g_fix_errors) {
-            const string quarantaine_path = "./quarantaine/" + hash_name;
+            const string quarantine_path = "./quarantine/" + hash_name;
             bool fixed = false;
-            if (rename(relative_path.c_str(), quarantaine_path.c_str()) == 0) {
+            if (rename(relative_path.c_str(), quarantine_path.c_str()) == 0) {
               LogCvmfs(kLogCvmfs, kLogStdout,
-                       "Fix: %s is corrupted, moved to quarantaine folder",
+                       "Fix: %s is corrupted, moved to quarantine folder",
                        path.c_str());
               fixed = true;
             } else {
               LogCvmfs(kLogCvmfs, kLogStdout,
-                       "Warning: failed to move %s into quarantaine folder",
+                       "Warning: failed to move %s into quarantine folder",
                        path.c_str());
               if (unlink(relative_path.c_str()) == 0) {
                 LogCvmfs(kLogCvmfs, kLogStdout,

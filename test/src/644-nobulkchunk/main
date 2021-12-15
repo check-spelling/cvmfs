@@ -12,7 +12,7 @@ cvmfs_run_test() {
   logfile=$1
   local repo_dir=/cvmfs/$CVMFS_TEST_REPO
 
-  echo "*** create a gc-eneabled repository named $CVMFS_TEST_REPO with user $CVMFS_TEST_USER"
+  echo "*** create a gc-enabled repository named $CVMFS_TEST_REPO with user $CVMFS_TEST_USER"
   create_empty_repo $CVMFS_TEST_REPO $CVMFS_TEST_USER "NO" -z -g || return $?
   disable_auto_garbage_collection $CVMFS_TEST_REPO || return $?
   echo "*** enable legacy bulk chunks"

@@ -47,7 +47,7 @@ class RepoFactory:
 		print "Prediction:"
 		print "   directories to be produced:  " , directories
 		print "   files to be produced:        " , files
-		print "   bytes to be written (aprox): " , bytes
+		print "   bytes to be written (approx): " , bytes
 
 	def PrintReport(self):
 		print "Results:"

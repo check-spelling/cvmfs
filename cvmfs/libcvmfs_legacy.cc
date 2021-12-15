@@ -320,7 +320,7 @@ static void usage() {
                                "'proxy1|proxy2;DIRECT'\n"
   " fallback_proxies=PROXIES   Set the fallback proxy list, such as "
                                "'proxy1;proxy2'\n"
-  " tracefile=FILE             Trace FUSE opaerations into FILE\n"
+  " tracefile=FILE             Trace FUSE operations into FILE\n"
   " pubkey=PEMFILE             Public RSA key that is used to verify the "
                                "whitelist signature.\n"
   " allow_unsigned             Accept unsigned catalogs "

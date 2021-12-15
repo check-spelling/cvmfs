@@ -49,7 +49,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 		nFlat.Elapsed(tFlat).AddField("action", "end_flat_conversion").Send()
 	}()
 
-	// it may happend at the very first round that this two calls return an error, let it be
+	// it may happen at the very first round that this two calls return an error, let it be
 	if err := cvmfs.CreateCatalogIntoDir(wish.CvmfsRepo, ".chains"); err != nil {
 		l.LogE(err).Error("Error in creating catalog inside `.chains` directory")
 	}
@@ -74,7 +74,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 		l.Log().WithFields(log.Fields{
 			"image":                  inputImage.GetSimpleName(),
 			"public path":            completePubSymPath,
-			"err stats pubblic path": errPub,
+			"err stats public path": errPub,
 			"private path":           completeSingularityPriPath,
 			"err stats private path": errPri,
 		}).Info("Checking if images links are up to date.")
@@ -87,7 +87,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 				continue
 			}
 			// delete the old pubLink
-			// make a new Link to the privatePaht
+			// make a new Link to the privatePath
 			// after that skip and continue
 			l.Log().WithFields(log.Fields{"image": inputImage.GetSimpleName()}).Info("Updating Singularity Image")
 			err = cvmfs.CreateSymlinkIntoCVMFS(wish.CvmfsRepo, publicSymlinkPath, singularityPrivatePath)
@@ -129,7 +129,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 		i := n.AddField("image", inputImage.GetSimpleName()).AddId()
 		t1 := time.Now()
 		i.Action("start_single_chain_conversion").Send()
-		i = i.Action("end_single_chain_convertion")
+		i = i.Action("end_single_chain_conversion")
 
 		err, lastChain := inputImage.CreateSneakyChainStructure(wish.CvmfsRepo)
 		if err != nil {
@@ -143,7 +143,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 
 		if _, err := os.Stat(filepath.Dir(completeSingularityPriPath)); err != nil {
 			cvmfs.WithinTransaction(wish.CvmfsRepo, func() error {
-				return os.MkdirAll(filepath.Dir(completeSingularityPriPath), constants.DirPermision)
+				return os.MkdirAll(filepath.Dir(completeSingularityPriPath), constants.DirPermission)
 			})
 		}
 		ociImage, err := inputImage.GetOCIImage()
@@ -327,8 +327,8 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 		}
 	}
 
-	layersChanell := make(chan downloadedLayer, 10)
-	manifestChanell := make(chan string, 1)
+	layersChannel := make(chan downloadedLayer, 10)
+	manifestChannel := make(chan string, 1)
 	stopGettingLayers := make(chan bool, 1)
 	noErrorInConversion := make(chan bool, 1)
 
@@ -350,7 +350,7 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 			close(stopGettingLayers)
 		}()
 
-		for layer := range layersChanell {
+		for layer := range layersChannel {
 
 			l.Log().WithFields(log.Fields{"layer": layer.Name}).Info("Start Ingesting the file into CVMFS")
 			layerDigest := strings.Split(layer.Name, ":")[1]
@@ -408,8 +408,8 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 	}
 	defer os.RemoveAll(tmpDir)
 
-	// this wil start to feed the above goroutine by writing into layersChanell
-	err = inputImage.GetLayers(layersChanell, manifestChanell, stopGettingLayers, tmpDir)
+	// this wil start to feed the above goroutine by writing into layersChannel
+	err = inputImage.GetLayers(layersChannel, manifestChannel, stopGettingLayers, tmpDir)
 	if err != nil {
 		return err
 	}
@@ -438,7 +438,7 @@ func convertInputOutput(inputImage *Image, repo string, convertAgain, forceDownl
 
 	if noErrorInConversionValue {
 		manifestPath := filepath.Join(".metadata", inputImage.GetSimpleName(), "manifest.json")
-		errIng := cvmfs.PublishToCVMFS(repo, manifestPath, <-manifestChanell)
+		errIng := cvmfs.PublishToCVMFS(repo, manifestPath, <-manifestChannel)
 		if errIng != nil {
 			l.LogE(errIng).Error("Error in storing the manifest in the repository")
 		}
@@ -553,7 +553,7 @@ func PushImageToRegistry(outputImage Image) (err error) {
 	l.Log().WithFields(log.Fields{"action": "prepared thin-image manifest"}).Info(string(b))
 	defer res.Close()
 	// here is possible to use the result of the above ReadAll to have
-	// informantion about the status of the upload.
+	// information about the status of the upload.
 	_, errReadDocker := ioutil.ReadAll(res)
 	if err != nil {
 		l.LogE(errReadDocker).Warning("Error in reading the status from docker")

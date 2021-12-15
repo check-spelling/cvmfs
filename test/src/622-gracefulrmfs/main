@@ -90,7 +90,7 @@ cvmfs_run_test() {
   echo "check if backend storage and keys are there"
   check_repo_data $CVMFS_TEST_REPO $backend_dir || return $?
 
-  echo "remove the repository (keeping the authorative data)"
+  echo "remove the repository (keeping the authoritative data)"
   destroy_repo $CVMFS_TEST_REPO -p || return 5
 
   echo "check if backend storage and keys are there"
@@ -108,7 +108,7 @@ cvmfs_run_test() {
   echo "check if backend storage and keys are there"
   check_repo_data $CVMFS_TEST_REPO $backend_dir || return $?
 
-  echo "remove the repository (removing the authorative data)"
+  echo "remove the repository (removing the authoritative data)"
   destroy_repo $CVMFS_TEST_REPO || return 7
 
   echo "check if backend storage and keys are gone"

@@ -46,7 +46,7 @@ change_files_in() {
   ln -s hardlinkToFile3 symlinkToHardlinkToFile3
 
   echo "deeply hidden content" > newdirectory/foo/bar
-  echo "another uselese blubb" > foo/bar/renemeusel
+  echo "another useless blubb" > foo/bar/renemeusel
 
   popdir
 }

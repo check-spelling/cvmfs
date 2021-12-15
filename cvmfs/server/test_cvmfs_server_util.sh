@@ -92,11 +92,11 @@ mock_repo_name=""
 echo "Checking validity of repository name '$mock_repo_name'"
 print_check $(is_valid_repo_name $mock_repo_name; echo $?) 1
 
-mock_repo_name="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQERSTUVWXYZ0123456"
+mock_repo_name="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456"
 echo "Checking validity of repository name '$mock_repo_name'"
 print_check $(is_valid_repo_name $mock_repo_name; echo $?) 0
 
-mock_repo_name="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQERSTUVWXYZ01234567"
+mock_repo_name="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567"
 echo "Checking validity of repository name '$mock_repo_name'"
 print_check $(is_valid_repo_name $mock_repo_name; echo $?) 1
 

@@ -54,8 +54,8 @@ func TestNotificationWeCanReadThem(t *testing.T) {
 	readed := make([]Notification, 0)
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		byt := scanner.Bytes()
-		nn, err := ParseNotification(byt)
+		bytes := scanner.Bytes()
+		nn, err := ParseNotification(bytes)
 		if err != nil {
 			t.Error("Error in parsing the notification")
 		}

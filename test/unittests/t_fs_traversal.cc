@@ -423,11 +423,11 @@ class BaseTraversalDelegate {
   }
 
 
-  void CheckPathes(
-         const std::set<std::string> &pathes,
+  void CheckPaths(
+         const std::set<std::string> &paths,
          const Checklist::Type        for_type = Checklist::Unspecified) const {
-    std::set<std::string>::const_iterator i    = pathes.begin();
-    std::set<std::string>::const_iterator iend = pathes.end();
+    std::set<std::string>::const_iterator i    = paths.begin();
+    std::set<std::string>::const_iterator iend = paths.end();
     for (; i != iend; ++i) {
       GetChecklist(*i).Check(for_type);
     }
@@ -435,12 +435,12 @@ class BaseTraversalDelegate {
 
 
   void CheckAllExcept(
-         const std::set<std::string> &pathes,
+         const std::set<std::string> &paths,
          const Checklist::Type        for_type = Checklist::Unspecified) const {
     ChecklistMap::const_iterator i    = reference_.begin();
     ChecklistMap::const_iterator iend = reference_.end();
     for (; i != iend; ++i) {
-      if (pathes.find(i->first) == pathes.end()) {
+      if (paths.find(i->first) == paths.end()) {
         i->second.Check(for_type);
       }
     }
@@ -499,12 +499,12 @@ class RootTraversalDelegate : public BaseTraversalDelegate {
     GetChecklist("c").Check(Checklist::NonTraversedDirectory);
 
     // check untouched entries
-    std::set<std::string> touched_pathes;
-    touched_pathes.insert("");
-    touched_pathes.insert("a");
-    touched_pathes.insert("b");
-    touched_pathes.insert("c");
-    CheckAllExcept(touched_pathes, Checklist::Untouched);
+    std::set<std::string> touched_paths;
+    touched_paths.insert("");
+    touched_paths.insert("a");
+    touched_paths.insert("b");
+    touched_paths.insert("c");
+    CheckAllExcept(touched_paths, Checklist::Untouched);
   }
 };
 
@@ -531,28 +531,28 @@ class IgnoringTraversalDelegate : public BaseTraversalDelegate {
     BaseTraversalDelegate(reference) {}
 
   void Check() const {
-    std::set<std::string> ignored_pathes;
-    ignored_pathes.insert("a/c/a/baz");
-    ignored_pathes.insert("a/c/baz");
-    ignored_pathes.insert("b/b/a/c/c/baz");
-    ignored_pathes.insert("b/b/a/c/c/fifo");
-    ignored_pathes.insert("b/b/a/c/c/socket");
-    ignored_pathes.insert("a/d");
-    ignored_pathes.insert("a/c/d");
-    ignored_pathes.insert("b/b/a/c/d");
-    ignored_pathes.insert("b/b/a/d");
-    ignored_pathes.insert("b/b/a/d/a");
-    ignored_pathes.insert("b/b/a/d/b");
-    ignored_pathes.insert("b/b/a/d/c");
-    ignored_pathes.insert("b/b/a/d/d");
-    ignored_pathes.insert("b/b/a/d/e");
-    ignored_pathes.insert("b/d");
-    ignored_pathes.insert("c/d");
-    ignored_pathes.insert("c/d/fifo");
-    ignored_pathes.insert("c/d/foo");
+    std::set<std::string> ignored_paths;
+    ignored_paths.insert("a/c/a/baz");
+    ignored_paths.insert("a/c/baz");
+    ignored_paths.insert("b/b/a/c/c/baz");
+    ignored_paths.insert("b/b/a/c/c/fifo");
+    ignored_paths.insert("b/b/a/c/c/socket");
+    ignored_paths.insert("a/d");
+    ignored_paths.insert("a/c/d");
+    ignored_paths.insert("b/b/a/c/d");
+    ignored_paths.insert("b/b/a/d");
+    ignored_paths.insert("b/b/a/d/a");
+    ignored_paths.insert("b/b/a/d/b");
+    ignored_paths.insert("b/b/a/d/c");
+    ignored_paths.insert("b/b/a/d/d");
+    ignored_paths.insert("b/b/a/d/e");
+    ignored_paths.insert("b/d");
+    ignored_paths.insert("c/d");
+    ignored_paths.insert("c/d/fifo");
+    ignored_paths.insert("c/d/foo");
 
-    CheckAllExcept(ignored_pathes);
-    CheckPathes(ignored_pathes, Checklist::Untouched);
+    CheckAllExcept(ignored_paths);
+    CheckPaths(ignored_paths, Checklist::Untouched);
   }
 
   void SetIgnoreNames(const std::set<std::string> &ignore_names) {
@@ -613,38 +613,38 @@ class SteeringTraversalDelegate : public BaseTraversalDelegate {
 
 
   void Check() const {
-    std::set<std::string> fully_ignored_pathes;
-    fully_ignored_pathes.insert("a/c/a/foo");
-    fully_ignored_pathes.insert("a/c/a/bar");
-    fully_ignored_pathes.insert("a/c/a/baz");
-    fully_ignored_pathes.insert("a/c/a/fifo");
-    fully_ignored_pathes.insert("a/c/a/socket");
+    std::set<std::string> fully_ignored_paths;
+    fully_ignored_paths.insert("a/c/a/foo");
+    fully_ignored_paths.insert("a/c/a/bar");
+    fully_ignored_paths.insert("a/c/a/baz");
+    fully_ignored_paths.insert("a/c/a/fifo");
+    fully_ignored_paths.insert("a/c/a/socket");
 
-    fully_ignored_pathes.insert("b/b/a/c/a");
-    fully_ignored_pathes.insert("b/b/a/c/b");
-    fully_ignored_pathes.insert("b/b/a/c/c");
-    fully_ignored_pathes.insert("b/b/a/c/c/foo");
-    fully_ignored_pathes.insert("b/b/a/c/c/bar");
-    fully_ignored_pathes.insert("b/b/a/c/c/baz");
-    fully_ignored_pathes.insert("b/b/a/c/c/fifo");
-    fully_ignored_pathes.insert("b/b/a/c/c/socket");
-    fully_ignored_pathes.insert("b/b/a/c/c/2b");
-    fully_ignored_pathes.insert("b/b/a/c/d");
-    fully_ignored_pathes.insert("b/b/a/c/e");
+    fully_ignored_paths.insert("b/b/a/c/a");
+    fully_ignored_paths.insert("b/b/a/c/b");
+    fully_ignored_paths.insert("b/b/a/c/c");
+    fully_ignored_paths.insert("b/b/a/c/c/foo");
+    fully_ignored_paths.insert("b/b/a/c/c/bar");
+    fully_ignored_paths.insert("b/b/a/c/c/baz");
+    fully_ignored_paths.insert("b/b/a/c/c/fifo");
+    fully_ignored_paths.insert("b/b/a/c/c/socket");
+    fully_ignored_paths.insert("b/b/a/c/c/2b");
+    fully_ignored_paths.insert("b/b/a/c/d");
+    fully_ignored_paths.insert("b/b/a/c/e");
 
     std::set<std::string> seen_but_non_traversed_dirs;
     seen_but_non_traversed_dirs.insert("a/c/a");
     seen_but_non_traversed_dirs.insert("b/b/a/c");
 
     std::set<std::string> all_special_cases;
-    all_special_cases.insert(fully_ignored_pathes.begin(),
-                             fully_ignored_pathes.end());
+    all_special_cases.insert(fully_ignored_paths.begin(),
+                             fully_ignored_paths.end());
     all_special_cases.insert(seen_but_non_traversed_dirs.begin(),
                              seen_but_non_traversed_dirs.end());
 
     CheckAllExcept(all_special_cases);
-    CheckPathes(fully_ignored_pathes, Checklist::Untouched);
-    CheckPathes(seen_but_non_traversed_dirs, Checklist::NonTraversedDirectory);
+    CheckPaths(fully_ignored_paths, Checklist::Untouched);
+    CheckPaths(seen_but_non_traversed_dirs, Checklist::NonTraversedDirectory);
   }
 };
 

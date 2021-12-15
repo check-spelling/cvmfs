@@ -171,7 +171,7 @@ func (r recombineReadCloser) Close() error {
 func parseHeader(h *http.Header) (string, []byte, error) {
 	tokens := strings.Split(h.Get("Authorization"), " ")
 	if len(tokens) != 2 {
-		return "", nil, fmt.Errorf("missing tokens in authoriation header")
+		return "", nil, fmt.Errorf("missing tokens in authorization header")
 	}
 
 	keyID := tokens[0]

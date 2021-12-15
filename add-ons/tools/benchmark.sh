@@ -31,7 +31,7 @@ create_riak_repo() {
   local repo_name=$1
   local riak_bucket=$2
 
-  echo -n "Create Riak Repositiory... "
+  echo -n "Create Riak Repository... "
   remove_repo $repo_name
   if [ $? -ne 0 ]; then
     echo "failed to remove old"

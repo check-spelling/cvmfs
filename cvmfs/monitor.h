@@ -19,7 +19,7 @@ struct Pipe;
 
 /**
  * This class can fork a watchdog process that listens on a pipe and prints a
- * stackstrace into syslog, when cvmfs fails.  The crash dump is also appended
+ * stacktrace into syslog, when cvmfs fails.  The crash dump is also appended
  * to the crash dump file, if the path is not empty.  Singleton.
  */
 class Watchdog {

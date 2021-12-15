@@ -32,7 +32,7 @@ struct InstanceInfo {
     bool retval = options_mgr.GetValue("CVMFS_DEFAULT_DOMAIN", &result);
     if (!retval) {
       LogCvmfs(kLogCvmfs, kLogStderr,
-               "Error: could not determin CVMFS_DEFAULT_DOMAIN");
+               "Error: could not determine CVMFS_DEFAULT_DOMAIN");
     }
     return result;
   }
@@ -143,7 +143,7 @@ bool SendCommand(const std::string &command, InstanceInfo instance_info) {
 static void Usage(const std::string &exe) {
   LogCvmfs(kLogCvmfs, kLogStdout,
     "Usage: %s [-i instance | -p socket] <command>                     \n"
-    "   By default, iteratate through all instances.                   \n"
+    "   By default, iterate through all instances.                     \n"
     "\n"
     "Example:                                                          \n"
     "  %s -i atlas.cern.ch pid                                         \n"
@@ -217,7 +217,7 @@ int main(int argc, char *argv[]) {
 
   int c;
   // 's' for socket would have been a better option letter but we keep 'p'
-  // for backwards compatibility.  The '+' at the beginning of the option stirng
+  // for backwards compatibility.  The '+' at the beginning of the option string
   // prevents permutation of the option and non-option arguments.
   while ((c = getopt(argc, argv, "+hi:p:")) != -1) {
     switch (c) {

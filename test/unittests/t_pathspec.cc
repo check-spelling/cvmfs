@@ -604,7 +604,7 @@ TEST(T_Pathspec, MultiDirectoryWildcards) {
   EXPECT_FALSE(p5.IsMatching("/foo/ba"));
   EXPECT_FALSE(p5.IsMatching("foo/ban"));
   EXPECT_FALSE(p5.IsMatching("foo/bat"));
-  EXPECT_FALSE(p5.IsMatching("/foo/banary"));
+  EXPECT_FALSE(p5.IsMatching("/foo/binary"));
 
   EXPECT_TRUE(p5.IsMatchingRelaxed("/foo/ban"));
   EXPECT_TRUE(p5.IsMatchingRelaxed("/foo/bat"));
@@ -612,7 +612,7 @@ TEST(T_Pathspec, MultiDirectoryWildcards) {
   EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/ba"));
   EXPECT_FALSE(p5.IsMatchingRelaxed("foo/ban"));
   EXPECT_FALSE(p5.IsMatchingRelaxed("foo/bat"));
-  EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/banary"));
+  EXPECT_FALSE(p5.IsMatchingRelaxed("/foo/binary"));
 }
 
 
@@ -713,10 +713,10 @@ TEST(T_Pathspec, AssignmentOperator) {
   EXPECT_TRUE(p5->IsValid());
   EXPECT_TRUE(p5->IsMatching("/another/heap/path.spec"));
 
-  Pathspec p6("will/be/overwritten");
+  Pathspec p6("will/be/overridden");
   EXPECT_TRUE(p6.IsValid());
-  EXPECT_TRUE(p6.IsMatching("will/be/overwritten"));
-  EXPECT_FALSE(p6.IsMatchingRelaxed("/will/be/overwritten"));
+  EXPECT_TRUE(p6.IsMatching("will/be/overridden"));
+  EXPECT_FALSE(p6.IsMatchingRelaxed("/will/be/overridden"));
 
   p6 = *p5;
   EXPECT_FALSE(p6.IsMatchingRelaxed("/heap/path!spec"));

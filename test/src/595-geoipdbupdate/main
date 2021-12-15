@@ -109,7 +109,7 @@ cvmfs_run_test() {
   mkdir reference_dir
   local reference_dir=$scratch_dir/reference_dir
 
-  local mnt_point="$(pwd)/mountpount"
+  local mnt_point="$(pwd)/mountpoint"
   local replica_name="$(get_stratum1_name $CVMFS_TEST_REPO)"
 
   local geodb_dir=$(dirname $CVMFS_TEST_595_GEODB)

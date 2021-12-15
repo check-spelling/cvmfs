@@ -93,7 +93,7 @@ cvmfs_run_test() {
   local root_clg_chowned_db=$(get_and_decompress_root_catalog $legacy_repo_name)
   local rev_no_chowned="$(sqlite3 $root_clg_chowned_db "SELECT value FROM properties WHERE key = 'revision';")"
 
-  echo "check if repostory is sane"
+  echo "check if repository is sane"
   check_repository $legacy_repo_name -i || return 3
 
   echo "count the number of hardlinked files (expecting 18)"
@@ -120,7 +120,7 @@ cvmfs_run_test() {
   [ x"$prev_ptr" = x"$root_clg_chowned"        ] || return 101
   [ $(( $rev_no_after - 1 )) = $rev_no_chowned ] || return 102
 
-  echo "check if repostory is still sane"
+  echo "check if repository is still sane"
   check_repository $legacy_repo_name -i || return 6
 
   echo "check if the right catalogs were migrated"
@@ -146,7 +146,7 @@ cvmfs_run_test() {
   echo "publish revision"
   publish_repo $legacy_repo_name || return 10
 
-  echo "check if repostory is still sane"
+  echo "check if repository is still sane"
   check_repository $legacy_repo_name -i || return 11
 
   echo "check if there are hardlinks again"
@@ -165,7 +165,7 @@ cvmfs_run_test() {
   echo "run the repository migration (logging into ${migration_log_2})"
   sudo cvmfs_server eliminate-hardlinks -f $legacy_repo_name > $migration_log_2 2>&1 || return 13
 
-  echo "check if repostory is still sane"
+  echo "check if repository is still sane"
   check_repository $legacy_repo_name -i || return 14
 
   echo "check if the right catalogs were migrated"
@@ -194,7 +194,7 @@ cvmfs_run_test() {
   echo "run the repository migration (logging into ${migration_log_3})"
   sudo cvmfs_server eliminate-hardlinks -f $legacy_repo_name > $migration_log_3 2>&1 || return 16
 
-  echo "check if repostory is still sane"
+  echo "check if repository is still sane"
   check_repository $legacy_repo_name -i || return 17
 
   echo "check if the right catalogs were migrated"
@@ -224,7 +224,7 @@ cvmfs_run_test() {
   echo "publish revision (log: $publish_log)"
   publish_repo $legacy_repo_name > $publish_log || return 22
 
-  echo "check if repostory is still sane"
+  echo "check if repository is still sane"
   check_repository $legacy_repo_name -i || return 23
 
   echo "check if there are hardlinks again (not expected)"

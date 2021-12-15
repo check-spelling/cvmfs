@@ -33,7 +33,7 @@ class SignatureManager;
 namespace catalog {
 
 /**
- * A catalog manager that uses a Fetcher to get file catalgs in the form of
+ * A catalog manager that uses a Fetcher to get file catalogs in the form of
  * (virtual) file descriptors from a cache manager.  Sqlite has a path based
  * interface.  This catalog manager returns @<FILE DESCRIPTOR> as a path and
  * thus requires a sqlite vfs that supports this syntax, such as the cvmfs

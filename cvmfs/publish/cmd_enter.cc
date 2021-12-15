@@ -77,7 +77,7 @@ static AnchorPid EnterRootContainer() {
 }
 
 static void EnsureDirectory(const std::string &path) {
-  bool rv = MkdirDeep(path, 0700, true /* veryfy_writable */);
+  bool rv = MkdirDeep(path, 0700, true /* verify_writable */);
   if (!rv)
     throw publish::EPublish("cannot create directory " + path);
 }
@@ -390,7 +390,7 @@ std::string CmdEnter::GetCvmfsXattr(const std::string &name) {
   bool rvb = platform_getxattr(settings_spool_area_.readonly_mnt(),
                                std::string("user.") + name, &xattr);
   if (!rvb) {
-    throw EPublish("cannot get extrended attribute " + name + " from " +
+    throw EPublish("cannot get extended attribute " + name + " from " +
                    settings_spool_area_.readonly_mnt());
   }
   return xattr;
@@ -597,7 +597,7 @@ int CmdEnter::Main(const Options &options) {
         std::string config;
         std::string config_file = repo_config_ + "/" + fqrn_ + "/server.conf";
         std::string folderpath = session_dir_ + "/" + fqrn_;
-        MkdirDeep(folderpath.c_str(), 0700, true /* veryfy_writable */);
+        MkdirDeep(folderpath.c_str(), 0700, true /* verify_writable */);
 
         std::string session_config_file = folderpath + "/server.conf";
         int fd_config = open(config_file.c_str(), O_RDONLY);

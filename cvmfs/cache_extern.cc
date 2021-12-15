@@ -753,10 +753,10 @@ bool ExternalCacheManager::SpawnPlugin(const vector<string> &cmd_line) {
   int fd_null_read = open("/dev/null", O_RDONLY);
   int fd_null_write = open("/dev/null", O_WRONLY);
   assert((fd_null_read >= 0) && (fd_null_write >= 0));
-  map<int, int> map_fildes;
-  map_fildes[fd_null_read] = 0;
-  map_fildes[fd_null_write] = 1;
-  map_fildes[fd_null_write] = 2;
+  map<int, int> map_filedes;
+  map_filedes[fd_null_read] = 0;
+  map_filedes[fd_null_write] = 1;
+  map_filedes[fd_null_write] = 2;
 
   pid_t child_pid;
   int retval = setenv(CacheTransport::kEnvReadyNotifyFd,
@@ -764,7 +764,7 @@ bool ExternalCacheManager::SpawnPlugin(const vector<string> &cmd_line) {
   assert(retval == 0);
   retval = ManagedExec(cmd_line,
                        preserve_filedes,
-                       map_fildes,
+                       map_filedes,
                        false,  // drop_credentials
                        false,  // clear_env
                        true,   // double fork

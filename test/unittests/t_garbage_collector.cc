@@ -703,7 +703,7 @@ TYPED_TEST(T_GarbageCollector, KeepOnlyNamedSnapshots) {
   EXPECT_EQ(11u, upl->deleted_hashes.size());
 }
 
-TYPED_TEST(T_GarbageCollector, KeepNamedSnapshotsWithAlreadySweepedRevisions) {
+TYPED_TEST(T_GarbageCollector, KeepNamedSnapshotsWithAlreadySweptRevisions) {
   typename TestFixture::GcConfiguration config =
     this->GetStandardGarbageCollectorConfiguration();
   config.keep_history_depth = TraversalParams::kFullHistory;

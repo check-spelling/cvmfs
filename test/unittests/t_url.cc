@@ -57,13 +57,13 @@ TEST(T_Url, HostnameWithProtocol) {
 }
 
 TEST(T_Url, HostnameNonDefaultPortAndProtocol) {
-  UniquePtr<Url> url(Url::Parse("host", "portocol", 2345));
+  UniquePtr<Url> url(Url::Parse("host", "protocol", 2345));
   ASSERT_TRUE(url.IsValid());
 
-  EXPECT_STREQ("portocol", url->protocol().c_str());
+  EXPECT_STREQ("protocol", url->protocol().c_str());
   EXPECT_STREQ("host", url->host().c_str());
   EXPECT_STREQ("", url->path().c_str());
-  EXPECT_STREQ("portocol://host:2345", url->address().c_str());
+  EXPECT_STREQ("protocol://host:2345", url->address().c_str());
   EXPECT_EQ(2345, url->port());
 }
 

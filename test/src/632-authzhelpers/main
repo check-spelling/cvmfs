@@ -60,7 +60,7 @@ cvmfs_run_test() {
   echo "mount secure mount point"
   secure_mount $mntpnt || return 20
 
-  echo "No memberhsip string set, this should work"
+  echo "No membership string set, this should work"
   sudo -u nobody /bin/sh -c "cat ${mntpnt}/hello_world" || return 30
   secure_unmount
 

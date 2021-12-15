@@ -33,7 +33,7 @@ class CommandCheck : public Command {
   virtual std::string GetName() const { return "check"; }
   virtual std::string GetDescription() const {
     return "CernVM File System repository sanity checker\n"
-      "This command checks the consisteny of the file catalogs of a "
+      "This command checks the consistency of the file catalogs of a "
         "cvmfs repository.";
   }
   virtual ParameterList GetParams() const {

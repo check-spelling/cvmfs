@@ -27,7 +27,7 @@ cvmfs_run_test() {
   echo "filling the repository with contents of /bin"
   cp_bin $repo_dir || return 1
 
-  echo "creating CVMFS snapshot (in the backgroud)"
+  echo "creating CVMFS snapshot (in the background)"
   cvmfs_server publish $CVMFS_TEST_REPO &
   local first_publish_pid=$!
   echo "PID: $first_publish_pid"

@@ -63,8 +63,8 @@ namespace {
 /**
  * Used for cas  insensitive HasSuffix
  */
-struct IgnoreCaseComperator {
-  IgnoreCaseComperator() {}
+struct IgnoreCaseComparator {
+  IgnoreCaseComparator() {}
   bool operator()(const std::string::value_type a,
                   const std::string::value_type b) const {
     return std::tolower(a) == std::tolower(b);
@@ -192,7 +192,7 @@ string StringifyTimeval(const timeval value) {
 }
 
 /**
- * Parses a timstamp of the form YYYY-MM-DDTHH:MM:SSZ
+ * Parses a timestamp of the form YYYY-MM-DDTHH:MM:SSZ
  * Return 0 on error
  */
 time_t IsoTimestamp2UtcTime(const std::string &iso8601) {
@@ -279,7 +279,7 @@ bool HasPrefix(const string &str, const string &prefix,
 bool HasSuffix(const std::string &str, const std::string &suffix,
                const bool ignore_case) {
   if (suffix.size() > str.size()) return false;
-  const IgnoreCaseComperator icmp;
+  const IgnoreCaseComparator icmp;
   return (ignore_case)
              ? std::equal(suffix.rbegin(), suffix.rend(), str.rbegin(), icmp)
              : std::equal(suffix.rbegin(), suffix.rend(), str.rbegin());
@@ -310,7 +310,7 @@ vector<string> SplitString(const string &str, const char delim,
     }
   }
 
-  // push the remainings of the string and return
+  // push the remains of the string and return
   result.push_back(str.substr(marker));
   return result;
 }

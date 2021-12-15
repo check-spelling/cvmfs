@@ -29,7 +29,7 @@ cvmfs_run_test() {
   cvmfs_config showconfig grid.cern.ch | grep CVMFS_KCACHE_TIMEOUT=4| grep /etc/cvmfs/default.local || retval=8
   cvmfs_umount grid.cern.ch || retval=9
 
-  sudo mv /etc/cvmfs/default.d/50-testB.conf    /etc/cvmfs/default.d/50-testB.conf.disbled || retval=10
+  sudo mv /etc/cvmfs/default.d/50-testB.conf    /etc/cvmfs/default.d/50-testB.conf.disabled || retval=10
 
   cvmfs_mount grid.cern.ch || retval=20
   sudo cvmfs_talk -i grid.cern.ch parameters | grep CVMFS_KCACHE_TIMEOUT=2 | grep /etc/cvmfs/default.d/50-testA.conf || retval=21

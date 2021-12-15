@@ -90,7 +90,7 @@ NamespaceFailures CreateUserNamespace(uid_t map_uid_to, gid_t map_gid_to) {
 
   return kFailNsOk;
 #else
-  return kFailNsUnsuppored;
+  return kFailNsUnsupported;
 #endif
 }
 

@@ -108,7 +108,7 @@ void Config()
 			    "recreate");
     if (rl == 0x0)
       {
-	gAlice->Fatal("Config.C","Can not instatiate the Run Loader");
+	gAlice->Fatal("Config.C","Can not instantiate the Run Loader");
 	return;
       }
     rl->SetCompressionLevel(2);
@@ -1314,28 +1314,28 @@ AliGenerator* GeneratorFactory(PprRun_t srun) {
         break;
       case kFlow_2_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 2%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 2%");
         gGener = GeVSimStandard(2000., 2.);
       }
         break;
         
       case kFlow_10_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 10%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 10%");
         gGener = GeVSimStandard(2000., 10.);
       }
         break;
         
       case kFlow_6_2000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 2000, vn = 6%");
+        comment = comment.Append(" Flow with dN/delta  = 2000, vn = 6%");
         gGener = GeVSimStandard(2000., 6.);
       }
         break;
         
       case kFlow_6_5000:
       {
-        comment = comment.Append(" Flow with dN/deta  = 5000, vn = 6%");
+        comment = comment.Append(" Flow with dN/delta  = 5000, vn = 6%");
         gGener = GeVSimStandard(5000., 6.);
       }
         break;
@@ -1444,7 +1444,7 @@ AliGenGeVSim* GeVSimStandard(Float_t mult, Float_t vn)
   // Mult is the number of charged particles in |eta| < 0.5
   // Vn is in (%)
   //
-  // Sigma of the Gaussian dN/deta
+  // Sigma of the Gaussian dN/delta
   Float_t sigma_eta  = 2.75;
   //
   // Maximum eta
@@ -1518,7 +1518,7 @@ AliGenGeVSim* GeVSimStandard(Float_t mult, Float_t vn)
   // Random Ev.Plane ----------------------------------
   TF1 *rpa = new TF1("gevsimPsiRndm","1", 0, 360);
   // --------------------------------------------------
-  gener->SetPtRange(0., 9.) ; // Use a resonable range! (used for bin size in numerical integration)
+  gener->SetPtRange(0., 9.) ; // Use a reasonable range! (used for bin size in numerical integration)
   gener->SetPhiRange(0, 360);
   //
   // Set pseudorapidity range 

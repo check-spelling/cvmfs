@@ -85,7 +85,7 @@ static inline void __attribute__((used)) smunmap(void *mem) {
   size_t pages = *(reinterpret_cast<size_t *>(area));
   int retval = munmap(area-sizeof(size_t), pages*4096);
   // printf("SUNMMAP %d bytes at %p\n", pages*4096, area);
-  assert((retval == 0) && "Invalid umnmap");
+  assert((retval == 0) && "Invalid unmap");
 }
 
 
@@ -112,7 +112,7 @@ static inline void * __attribute__((used)) sxmmap(size_t size) {
  */
 static inline void __attribute__((used)) sxunmap(void *mem, size_t size) {
   int retval = munmap(mem, size);
-  assert((retval == 0) && "Invalid umnmap");
+  assert((retval == 0) && "Invalid unmap");
 }
 
 

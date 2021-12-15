@@ -36,7 +36,7 @@ function retry {
     fi
 }
 
-echo "running remote snaphsotter..."
+echo "running remote snapshotter..."
 containerd-stargz-grpc --log-level=debug \
                        --config="/etc/containerd-stargz-grpc/config.toml" &
 retry ls /run/containerd-cvmfs-grpc/containerd-cvmfs-grpc.sock
