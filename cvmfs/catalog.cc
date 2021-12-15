@@ -818,7 +818,7 @@ Catalog* Catalog::FindChild(const PathString &mountpoint) const {
 
 
 /**
- * For the transtion points for nested catalogs and bind mountpoints, the inode
+ * For the transition points for nested catalogs and bind mountpoints, the inode
  * is ambiguous. It has to be set to the parent inode because nested catalogs
  * are lazily loaded.
  * @param md5path the MD5 hash of the entry to check
