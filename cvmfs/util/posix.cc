@@ -906,7 +906,7 @@ bool MkdirDeep(
 bool MakeCacheDirectories(const std::string &path, const mode_t mode) {
   const std::string canonical_path = MakeCanonicalPath(path);
 
-  std::string this_path = canonical_path + "/quarantaine";
+  std::string this_path = canonical_path + "/quarantine";
   if (!MkdirDeep(this_path, mode, false)) return false;
 
   this_path = canonical_path + "/ff";

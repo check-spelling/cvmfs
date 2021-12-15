@@ -1221,7 +1221,7 @@
   * Verify decompressed size on download
   * Unlink left-over temporary file catalogs in cvmfs_fsck
   * Fixed a file descriptor leak on loading certificates
-  * Move dodgy files into a quarantaine folder in the cache
+  * Move dodgy files into a quarantine folder in the cache
   * Log proxy switches to syslog
   * Use stack buffer for streamed file I/O
   * Fixed a file descriptor leak in the catalog load code

@@ -172,7 +172,7 @@ int PosixCacheManager::CommitTxn(void *txn) {
                transaction->id.ToString().c_str(),
                transaction->expected_size, transaction->size);
       CopyPath2Path(transaction->tmp_path,
-                    cache_path_ + "/quarantaine/" + transaction->id.ToString());
+                    cache_path_ + "/quarantine/" + transaction->id.ToString());
       unlink(transaction->tmp_path.c_str());
       transaction->~Transaction();
       atomic_dec32(&no_inflight_txns_);

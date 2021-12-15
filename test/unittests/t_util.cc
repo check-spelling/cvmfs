@@ -906,7 +906,7 @@ TEST_F(T_Util, MakeCacheDirectories) {
   MakeCacheDirectories(path, 0777);
 
   EXPECT_TRUE(DirectoryExists(path + "/txn"));
-  EXPECT_TRUE(DirectoryExists(path + "/quarantaine"));
+  EXPECT_TRUE(DirectoryExists(path + "/quarantine"));
   for (int i = 0; i <= 0xff; i++) {
     char hex[4];
     snprintf(hex, sizeof(hex), "%02x", i);

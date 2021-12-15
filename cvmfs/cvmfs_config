@@ -1410,12 +1410,12 @@ cvmfs_bugreport() {
   mkdir etc
   cp -r /etc/cvmfs etc/
 
-  echo "Gathering files in quarantaine"
+  echo "Gathering files in quarantine"
   for repo in `ls "$CVMFS_CACHE_BASE"`
   do
-    qdir="${CVMFS_CACHE_BASE}/${repo}/quarantaine"
+    qdir="${CVMFS_CACHE_BASE}/${repo}/quarantine"
       if [ -d "$qdir" ]; then
-        tar cfz quarantaine-${repo}.tar.gz "$qdir" 2>/dev/null
+        tar cfz quarantine-${repo}.tar.gz "$qdir" 2>/dev/null
       fi
   done
 

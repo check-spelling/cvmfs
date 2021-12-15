@@ -335,7 +335,7 @@ TEST_F(T_Fetcher, FetchTransactionFailures) {
   // Wrong size (commit fails)
   EXPECT_EQ(-EIO, fetcher_->Fetch(hash_cert_, 2, "cat", zlib::kZlibDefault,
                                   CacheManager::kTypeRegular));
-  EXPECT_TRUE(FileExists(tmp_path_ + "/quarantaine/" + hash_cert_.ToString()));
+  EXPECT_TRUE(FileExists(tmp_path_ + "/quarantine/" + hash_cert_.ToString()));
   int fd = fetcher_->Fetch(hash_cert_, 1, "cat", zlib::kZlibDefault,
                            CacheManager::kTypeRegular);
   EXPECT_GE(fd, 0);
