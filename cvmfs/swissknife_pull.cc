@@ -227,7 +227,7 @@ static void StoreBuffer(const unsigned char *buffer, const unsigned size,
   assert(ftmp);
   int retval;
   if (compress) {
-    shash::Any dummy(shash::kSha1);  // hardcoded hash no problem, unsused
+    shash::Any dummy(shash::kSha1);  // hardcoded hash no problem, unused
     retval = zlib::CompressMem2File(buffer, size, ftmp, &dummy);
   } else {
     retval = CopyMem2File(buffer, size, ftmp);
