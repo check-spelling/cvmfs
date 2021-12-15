@@ -196,7 +196,7 @@ class Recorder {
   std::vector<uint32_t> bins_;
 
   /**
-   * When the most recent tick occured.
+   * When the most recent tick occurred.
    */
   uint64_t last_timestamp_;
 

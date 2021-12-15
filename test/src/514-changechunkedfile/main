@@ -113,7 +113,7 @@ check_chunk_alignment() {
 
   # compare the chunk sizes of associated chunks in the old and the new version
   # of the updated file.
-  # the final output is the chunk difference which occured most frequently
+  # the final output is the chunk difference which occurred most frequently
   # --> in the best case this is 0 :-)
   most_common_size_difference=$(echo " \
   ATTACH '${old_catalog}' AS old; \

@@ -1408,7 +1408,7 @@ bool CommandMigrate::MigrationWorker_20x::FixNestedCatalogTransitionPoints(
       update_directory_entry.Reset();
 
       // Fixing of this mountpoint went well... inform the user that this minor
-      // issue occured
+      // issue occurred
       LogCvmfs(kLogCatalog, kLogStdout,
                "NOTE: fixed incompatible nested catalog transition point at: "
                "'%s' ", nested_root_path.c_str());
