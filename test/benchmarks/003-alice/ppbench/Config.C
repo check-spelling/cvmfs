@@ -1518,7 +1518,7 @@ AliGenGeVSim* GeVSimStandard(Float_t mult, Float_t vn)
   // Random Ev.Plane ----------------------------------
   TF1 *rpa = new TF1("gevsimPsiRndm","1", 0, 360);
   // --------------------------------------------------
-  gener->SetPtRange(0., 9.) ; // Use a resonable range! (used for bin size in numerical integration)
+  gener->SetPtRange(0., 9.) ; // Use a reasonable range! (used for bin size in numerical integration)
   gener->SetPhiRange(0, 360);
   //
   // Set pseudorapidity range 
