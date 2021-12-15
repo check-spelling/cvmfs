@@ -58,7 +58,7 @@ EOL
 	# run the image using podman
 	sudo podman run --rm ubuntu echo "hello from ubuntu container" || return $?
 
-	echo "*** Test successfull ***"
+	echo "*** Test successful ***"
 
 	sudo sed -i "/$CVMFS_TEST405_REPOSITORY/d" /etc/containers/storage.conf
 
