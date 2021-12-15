@@ -111,7 +111,7 @@ class CatalogTraversalBase
    * @param no_close             do not close catalogs after they were attached
    *                             (catalogs retain their parent/child pointers)
    * @param ignore_load_failure  suppressed an error message if a catalog file
-   *                             could not be loaded (i.e. was sweeped before by
+   *                             could not be loaded (i.e. was swept before by
    *                             a garbage collection run)
    * @param quiet                silence messages that would go to stderr
    * @param tmp_dir              path to the temporary directory to be used
@@ -605,7 +605,7 @@ class CatalogTraversal
    *        After these steps the catalog is opened either opened and ready for
    *        the traversal to continue, or it was marked for ignore (job.ignore)
    *  3.) Check if the catalog is marked to be ignored
-   *        Catalog might not be loadable (sweeped root catalog) or is too old
+   *        Catalog might not be loadable (swept root catalog) or is too old
    *        Note: ignored catalogs can still trigger postponed yields
    *  4.) Mark the catalog as visited to be able to skip it later on
    *  5.) Find and push referencing catalogs

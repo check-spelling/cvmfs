@@ -404,7 +404,7 @@ bool CommandPull::Pull(const shash::Any   &catalog_hash,
   if (dl_retval != download::kFailOk) {
     if (path == "" && is_garbage_collectable) {
       LogCvmfs(kLogCvmfs, kLogStdout, "skipping missing root catalog %s - "
-                                      "probably sweeped by garbage collection",
+                                      "probably swept by garbage collection",
                catalog_hash.ToString().c_str());
       goto pull_skip;
     } else {
