@@ -76,7 +76,7 @@ func (m Manifest) GetSingularityPath() string {
 }
 
 // please note how we use the simple digest from the layers, it is not
-// striclty correct, since we would need the digest of the uncompressed
+// strictly correct, since we would need the digest of the uncompressed
 // layer, that can be found in the Config file of the image.
 // For our purposes, however, this is good enough.
 func (m Manifest) GetChainIDs() []digest.Digest {
