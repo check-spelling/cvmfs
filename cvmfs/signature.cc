@@ -725,7 +725,7 @@ bool SignatureManager::VerifyCaChain() {
 /**
  * Signs a data block using the loaded private key.
  *
- * \return True on sucess, false otherwise
+ * \return True on success, false otherwise
  */
 bool SignatureManager::Sign(const unsigned char *buffer,
                             const unsigned buffer_size,
@@ -773,7 +773,7 @@ bool SignatureManager::Sign(const unsigned char *buffer,
 /**
  * Signs a data block using the loaded private master key.
  *
- * \return True on sucess, false otherwise
+ * \return True on success, false otherwise
  */
 bool SignatureManager::SignRsa(const unsigned char *buffer,
                                const unsigned buffer_size,
