@@ -655,7 +655,7 @@ class CatalogTraversal
       }
     }
 
-    // invariant: after the traversal finshed, there should be no more catalogs
+    // invariant: after the traversal finished, there should be no more catalogs
     //            to traverse or to yield!
     assert(ctx->catalog_stack.empty());
     assert(ctx->callback_stack.empty());
