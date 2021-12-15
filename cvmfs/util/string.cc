@@ -310,7 +310,7 @@ vector<string> SplitString(const string &str, const char delim,
     }
   }
 
-  // push the remainings of the string and return
+  // push the remains of the string and return
   result.push_back(str.substr(marker));
   return result;
 }
