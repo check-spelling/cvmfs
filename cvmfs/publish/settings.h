@@ -490,7 +490,7 @@ class SettingsBuilder : SingleCopy {
    * If ident is a url, creates a generic settings object inferring the fqrn
    * from the url.
    * Otherwise, looks in the config files in /etc/cvmfs/repositories.d/<alias>/
-   * If alias is an empty string, the command still succeds iff there is a
+   * If alias is an empty string, the command still succeeds iff there is a
    * single repository under /etc/cvmfs/repositories.d
    */
   SettingsRepository CreateSettingsRepository(const std::string &ident);
@@ -499,7 +499,7 @@ class SettingsBuilder : SingleCopy {
    * If ident is a url, creates a generic settings object inferring the fqrn
    * from the url.
    * Otherwise, looks in the config files in /etc/cvmfs/repositories.d/<alias>/
-   * If alias is an empty string, the command still succeds iff there is a
+   * If alias is an empty string, the command still succeeds iff there is a
    * single repository under /etc/cvmfs/repositories.d
    * If needs_managed is true, remote repositories are rejected
    * In an "enter environment" (see cmd_enter), the spool area of the enter
