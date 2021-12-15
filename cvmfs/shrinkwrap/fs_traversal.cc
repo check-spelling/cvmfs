@@ -654,9 +654,9 @@ perf::Statistics *GetSyncStatTemplate() {
   result->Register(SHRINKWRAP_STAT_ENTRIES_DEST,
     "Number of file system entries processed in the destination");
   result->Register(SHRINKWRAP_STAT_DATA_FILES,
-    "Number of data files transfered from source to destination");
+    "Number of data files transferred from source to destination");
   result->Register(SHRINKWRAP_STAT_DATA_BYTES,
-    "Bytes transfered from source to destination");
+    "Bytes transferred from source to destination");
   result->Register(SHRINKWRAP_STAT_DATA_FILES_DEDUPED,
     "Number of files not copied due to deduplication");
   result->Register(SHRINKWRAP_STAT_DATA_BYTES_DEDUPED,
