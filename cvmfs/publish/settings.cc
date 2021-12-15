@@ -52,7 +52,7 @@ void SettingsSpoolArea::EnsureDirectories() {
   targets.push_back(ovl_work_dir());
 
   for (unsigned i = 0; i < targets.size(); ++i) {
-    bool rv = MkdirDeep(targets[i], 0700, true /* veryfy_writable */);
+    bool rv = MkdirDeep(targets[i], 0700, true /* verify_writable */);
     if (!rv)
       throw publish::EPublish("cannot create directory " + targets[i]);
   }
