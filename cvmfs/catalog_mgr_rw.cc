@@ -1108,7 +1108,7 @@ bool WritableCatalogManager::Commit(const bool           stop_for_tweaks,
  *       catalogs.
  *
  * TODO(rmeusel): since all leaf catalogs are finalized in the main thread, we
- *                sacrafice some potential concurrency for simplicity.
+ *                sacrifice some potential concurrency for simplicity.
  */
 WritableCatalogManager::CatalogInfo WritableCatalogManager::SnapshotCatalogs(
                                                    const bool stop_for_tweaks) {
