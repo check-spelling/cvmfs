@@ -29,7 +29,7 @@ namespace manifest {
  *
  * Reflogs are associated to a specific backend storage of Stratum0 or Stratum1
  * and _not_ to a CernVM-FS repository. Thus, the Reflogs of Stratum0 and its
- * replicas can and probably will be different and are _not_ interchangable.
+ * replicas can and probably will be different and are _not_ interchangeable.
  *
  * TODO(rmeusel): this shares a lot of database management code with
  *                SqliteHistory and (potentially) ...Catalog. This might be an
