@@ -404,7 +404,7 @@ class CatalogTraversalBase
 
   /**
    * Checks if a root catalog is below one of the pruning thresholds.
-   * Pruning thesholds can be either the catalog's history depth or a timestamp
+   * Pruning thresholds can be either the catalog's history depth or a timestamp
    * threshold applied to the last modified timestamp of the catalog.
    *
    * @param ctx  traversal context for traversal-specific state
