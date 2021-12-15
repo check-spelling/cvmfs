@@ -634,7 +634,7 @@ void WritableCatalogManager::AddHardlinkGroup(
   }
 
   // Get a valid hardlink group id for the catalog the group will end up in
-  // TODO(unkown): Compaction
+  // TODO(unknown): Compaction
   uint32_t new_group_id = catalog->GetMaxLinkId() + 1;
   LogCvmfs(kLogCatalog, kLogVerboseMsg, "hardlink group id %u issued",
            new_group_id);
