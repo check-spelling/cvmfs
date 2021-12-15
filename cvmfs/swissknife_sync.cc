@@ -808,7 +808,7 @@ int swissknife::CommandSync::Main(const swissknife::ArgumentList &args) {
   publish::SyncMediator mediator(&catalog_manager, &params, publish_statistics);
   LogCvmfs(kLogPublish, kLogStdout, "Processing changes...");
 
-  // Should be before the syncronization starts to avoid race of GetTTL with
+  // Should be before the synchronization starts to avoid race of GetTTL with
   // other sqlite operations
   if ((params.ttl_seconds > 0) &&
       ((params.ttl_seconds != catalog_manager.GetTTL()) ||
