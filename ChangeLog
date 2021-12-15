@@ -785,7 +785,7 @@
     CVMFS_CLAIM_OWNERSHIP (CVM-678)
   * Add support for garbage-collected repositories (CVM-583, CVM-760)
   * Add support for automatically ordering Stratum 1 servers according to
-    geographic loations (CVM-629, CVM-630)
+    geographic locations (CVM-629, CVM-630)
   * Add 'host probe geo' command to cvmfs_talk
   * Add CVMFS_USE_GEOAPI parameter
   * Add host_list extended attribute
