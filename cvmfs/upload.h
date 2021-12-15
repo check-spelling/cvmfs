@@ -152,7 +152,7 @@ class Spooler : public Observable<SpoolerResult> {
   std::string backend_name() const;
 
   /**
-   * Calls the concrete uploder to create a new repository area
+   * Calls the concrete uploader to create a new repository area
    */
   bool Create();
 
