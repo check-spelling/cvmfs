@@ -553,7 +553,7 @@ func PushImageToRegistry(outputImage Image) (err error) {
 	l.Log().WithFields(log.Fields{"action": "prepared thin-image manifest"}).Info(string(b))
 	defer res.Close()
 	// here is possible to use the result of the above ReadAll to have
-	// informantion about the status of the upload.
+	// information about the status of the upload.
 	_, errReadDocker := ioutil.ReadAll(res)
 	if err != nil {
 		l.LogE(errReadDocker).Warning("Error in reading the status from docker")
