@@ -21,7 +21,7 @@ class OptionsManager;
 namespace publish {
 
 /**
- * Allows for settings that remember whether they have been explictily
+ * Allows for settings that remember whether they have been explicitly
  * overwritten.  Otherwise, default values can be changed to upstream repository
  * settings.
  */
