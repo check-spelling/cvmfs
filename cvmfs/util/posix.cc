@@ -1685,21 +1685,21 @@ bool ExecuteBinary(
   MakePipe(pipe_stdout);
   MakePipe(pipe_stderr);
 
-  std::set<int> preserve_fildes;
-  preserve_fildes.insert(0);
-  preserve_fildes.insert(1);
-  preserve_fildes.insert(2);
-  std::map<int, int> map_fildes;
-  map_fildes[pipe_stdin[0]] = 0;  // Reading end of pipe_stdin
-  map_fildes[pipe_stdout[1]] = 1;  // Writing end of pipe_stdout
-  map_fildes[pipe_stderr[1]] = 2;  // Writing end of pipe_stderr
+  std::set<int> preserve_filedes;
+  preserve_filedes.insert(0);
+  preserve_filedes.insert(1);
+  preserve_filedes.insert(2);
+  std::map<int, int> map_filedes;
+  map_filedes[pipe_stdin[0]] = 0;  // Reading end of pipe_stdin
+  map_filedes[pipe_stdout[1]] = 1;  // Writing end of pipe_stdout
+  map_filedes[pipe_stderr[1]] = 2;  // Writing end of pipe_stderr
   std::vector<std::string> cmd_line;
   cmd_line.push_back(binary_path);
   cmd_line.insert(cmd_line.end(), argv.begin(), argv.end());
 
   if (!ManagedExec(cmd_line,
-                   preserve_fildes,
-                   map_fildes,
+                   preserve_filedes,
+                   map_filedes,
                    true /* drop_credentials */,
                    false /* clear_env */,
                    double_fork,
@@ -1771,9 +1771,9 @@ struct ForkFailures {  // TODO(rmeusel): C++11 (type safe enum)
  * Execve to the given command line, preserving the given file descriptors.
  * If stdin, stdout, stderr should be preserved, add 0, 1, 2.
  * File descriptors from the parent process can also be mapped to the new
- * process (dup2) using map_fildes.  Can be useful for
+ * process (dup2) using map_filedes.  Can be useful for
  * stdout/in/err redirection.
- * NOTE: The destination fildes have to be preserved!
+ * NOTE: The destination filedes have to be preserved!
  * Does a double fork to detach child.
  * The command_line parameter contains the binary at index 0 and the arguments
  * in the rest of the vector.
@@ -1781,8 +1781,8 @@ struct ForkFailures {  // TODO(rmeusel): C++11 (type safe enum)
  * of the spawned process.
  */
 bool ManagedExec(const std::vector<std::string>  &command_line,
-                 const std::set<int>        &preserve_fildes,
-                 const std::map<int, int>   &map_fildes,
+                 const std::set<int>        &preserve_filedes,
+                 const std::map<int, int>   &map_filedes,
                  const bool             drop_credentials,
                  const bool             clear_env,
                  const bool             double_fork,
@@ -1814,8 +1814,8 @@ bool ManagedExec(const std::vector<std::string>  &command_line,
     argv[command_line.size()] = NULL;
 
     // Child, map file descriptors
-    for (std::map<int, int>::const_iterator i = map_fildes.begin(),
-         iEnd = map_fildes.end(); i != iEnd; ++i)
+    for (std::map<int, int>::const_iterator i = map_filedes.begin(),
+         iEnd = map_filedes.end(); i != iEnd; ++i)
     {
       int retval = dup2(i->first, i->second);
       if (retval == -1) {
@@ -1831,7 +1831,7 @@ bool ManagedExec(const std::vector<std::string>  &command_line,
       goto fork_failure;
     }
     for (int fd = 0; fd < max_fd; fd++) {
-      if ((fd != pipe_fork.write_end) && (preserve_fildes.count(fd) == 0)) {
+      if ((fd != pipe_fork.write_end) && (preserve_filedes.count(fd) == 0)) {
         close(fd);
       }
     }
