@@ -441,7 +441,7 @@ bool CommandMigrate::DoMigrationAndCommit(
                           new_catalog->GetLastModified(),
                           &history_hash))
       {
-        Error("Updateing tag database failed.\nAborting...");
+        Error("Updating tag database failed.\nAborting...");
         return false;
       }
       manifest.set_history(history_hash);
