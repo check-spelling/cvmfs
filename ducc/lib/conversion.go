@@ -143,7 +143,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 
 		if _, err := os.Stat(filepath.Dir(completeSingularityPriPath)); err != nil {
 			cvmfs.WithinTransaction(wish.CvmfsRepo, func() error {
-				return os.MkdirAll(filepath.Dir(completeSingularityPriPath), constants.DirPermision)
+				return os.MkdirAll(filepath.Dir(completeSingularityPriPath), constants.DirPermission)
 			})
 		}
 		ociImage, err := inputImage.GetOCIImage()

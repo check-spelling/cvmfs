@@ -83,15 +83,15 @@ class SyncItemDummyDir : public SyncItemNative {
     assert(kItemDir == entry_type);
 
     scratch_stat_.obtained = true;
-    scratch_stat_.stat.st_mode = kPermision;
+    scratch_stat_.stat.st_mode = kPermission;
     scratch_stat_.stat.st_nlink = 1;
     scratch_stat_.stat.st_uid = getuid();
     scratch_stat_.stat.st_gid = getgid();
   }
 
  private:
-  static const mode_t kPermision = S_IFDIR | S_IRUSR | S_IWUSR | S_IXUSR |
-                                   S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH;
+  static const mode_t kPermission = S_IFDIR | S_IRUSR | S_IWUSR | S_IXUSR |
+                                    S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH;
 };
 
 catalog::DirectoryEntryBase SyncItemDummyDir::CreateBasicCatalogDirent() const {
@@ -101,7 +101,7 @@ catalog::DirectoryEntryBase SyncItemDummyDir::CreateBasicCatalogDirent() const {
 
   dirent.linkcount_ = 1;
 
-  dirent.mode_ = kPermision;
+  dirent.mode_ = kPermission;
 
   dirent.uid_ = scratch_stat_.stat.st_uid;
   dirent.gid_ = scratch_stat_.stat.st_gid;

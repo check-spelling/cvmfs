@@ -51,7 +51,7 @@ func PublishToCVMFS(CVMFSRepo string, path string, target string) (err error) {
 
 		if targetStat.Mode().IsDir() {
 			os.RemoveAll(path)
-			err = os.MkdirAll(path, constants.DirPermision)
+			err = os.MkdirAll(path, constants.DirPermission)
 			if err != nil {
 				l.LogE(err).WithFields(log.Fields{"repo": CVMFSRepo}).Warning("Error in creating the directory where to copy the singularity")
 			}
@@ -59,7 +59,7 @@ func PublishToCVMFS(CVMFSRepo string, path string, target string) (err error) {
 
 		} else if targetStat.Mode().IsRegular() {
 			err = func() error {
-				os.MkdirAll(filepath.Dir(path), constants.DirPermision)
+				os.MkdirAll(filepath.Dir(path), constants.DirPermission)
 				os.Remove(path)
 
 				from, err := os.Open(target)
@@ -68,7 +68,7 @@ func PublishToCVMFS(CVMFSRepo string, path string, target string) (err error) {
 				}
 				defer from.Close()
 
-				to, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, constants.FilePermision)
+				to, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, constants.FilePermission)
 				if err != nil {
 					return err
 				}
@@ -123,7 +123,7 @@ func CreateSymlinkIntoCVMFS(CVMFSRepo, newLinkName, toLinkPath string) (err erro
 
 	err = WithinTransaction(CVMFSRepo, func() error {
 		linkDir := filepath.Dir(newLinkName)
-		err = os.MkdirAll(linkDir, constants.DirPermision)
+		err = os.MkdirAll(linkDir, constants.DirPermission)
 		if err != nil {
 			llog(l.LogE(err)).WithFields(log.Fields{
 				"directory": linkDir}).Error(
@@ -254,7 +254,7 @@ func SaveLayersBacklink(CVMFSRepo string, imgManifest da.Manifest, imageName str
 			// and if it doesn't exists create it
 			dir := filepath.Dir(path)
 			if _, err := os.Stat(dir); os.IsNotExist(err) {
-				err = os.MkdirAll(dir, constants.DirPermision)
+				err = os.MkdirAll(dir, constants.DirPermission)
 				if err != nil {
 					llog(l.LogE(err)).WithFields(
 						log.Fields{"file": path}).
@@ -262,7 +262,7 @@ func SaveLayersBacklink(CVMFSRepo string, imgManifest da.Manifest, imageName str
 					continue
 				}
 			}
-			err := ioutil.WriteFile(path, fileContent, constants.FilePermision)
+			err := ioutil.WriteFile(path, fileContent, constants.FilePermission)
 			if err != nil {
 				llog(l.LogE(err)).WithFields(log.Fields{"file": path}).Error(
 					"Error in writing the backlink file, skipping...")
@@ -293,7 +293,7 @@ func AddManifestToRemoveScheduler(CVMFSRepo string, manifest da.Manifest) error 
 	// if the file exist, load from it
 	if _, err := os.Stat(schedulePath); !os.IsNotExist(err) {
 
-		scheduleFileRO, err := os.OpenFile(schedulePath, os.O_RDONLY, constants.FilePermision)
+		scheduleFileRO, err := os.OpenFile(schedulePath, os.O_RDONLY, constants.FilePermission)
 		if err != nil {
 			llog(l.LogE(err)).Error("Impossible to open the schedule file")
 			return err
@@ -330,7 +330,7 @@ func AddManifestToRemoveScheduler(CVMFSRepo string, manifest da.Manifest) error 
 
 	err := WithinTransaction(CVMFSRepo, func() error {
 		if _, err := os.Stat(schedulePath); os.IsNotExist(err) {
-			err = os.MkdirAll(filepath.Dir(schedulePath), constants.DirPermision)
+			err = os.MkdirAll(filepath.Dir(schedulePath), constants.DirPermission)
 			if err != nil {
 				llog(l.LogE(err)).Error("Error in creating the directory where save the schedule")
 			}
@@ -341,7 +341,7 @@ func AddManifestToRemoveScheduler(CVMFSRepo string, manifest da.Manifest) error 
 			llog(l.LogE(err)).Error("Error in marshaling the new schedule")
 		} else {
 
-			err = ioutil.WriteFile(schedulePath, bytes, constants.FilePermision)
+			err = ioutil.WriteFile(schedulePath, bytes, constants.FilePermission)
 			if err != nil {
 				llog(l.LogE(err)).Error("Error in writing the new schedule")
 			} else {
@@ -522,9 +522,9 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 		// if the directory does not exists, we create it
 
 		if err := WithinTransaction(CVMFSRepo, func() error {
-			os.MkdirAll(dir, constants.DirPermision)
+			os.MkdirAll(dir, constants.DirPermission)
 			filePath := filepath.Join(dir, ".cvmfscatalog")
-			f, err := os.OpenFile(filePath, os.O_CREATE|os.O_RDONLY, constants.FilePermision)
+			f, err := os.OpenFile(filePath, os.O_CREATE|os.O_RDONLY, constants.FilePermission)
 			if err != nil {
 				l.LogE(err).Info("Error in creating ", filePath)
 				return err
@@ -559,9 +559,9 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 				return fmt.Errorf("Different number of directories between the source and tha target directories during a template transaction. source: %s , # of dir: %d, target: %s, # of dirs: %d", source, len(sourceDirs), destination, len(destinationDirs))
 			}
 
-			f, _ := os.OpenFile(filepath.Join(destination, ".cvmfscatalog"), os.O_CREATE|os.O_RDONLY, constants.FilePermision)
+			f, _ := os.OpenFile(filepath.Join(destination, ".cvmfscatalog"), os.O_CREATE|os.O_RDONLY, constants.FilePermission)
 			f.Close()
-			err = os.MkdirAll(dirtyChainPath, constants.DirPermision)
+			err = os.MkdirAll(dirtyChainPath, constants.DirPermission)
 			if err != nil {
 				return err
 			}
@@ -576,7 +576,7 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 		for {
 			header, err := layer.Next()
 			if err == io.EOF {
-				f, _ := os.OpenFile(filepath.Join(sneakyChainPath, ".cvmfscatalog"), os.O_CREATE|os.O_RDONLY, constants.FilePermision)
+				f, _ := os.OpenFile(filepath.Join(sneakyChainPath, ".cvmfscatalog"), os.O_CREATE|os.O_RDONLY, constants.FilePermission)
 				f.Close()
 				return nil
 			}
@@ -593,7 +593,7 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 			path := filepath.Join(sneakyChainPath, header.Name)
 			dir := filepath.Dir(path)
 
-			os.MkdirAll(dir, constants.DirPermision)
+			os.MkdirAll(dir, constants.DirPermission)
 			if isWhiteout(path) {
 				// this will be an empty file
 				// check if it is an opaque directory or a standard whiteout file
@@ -621,7 +621,7 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 
 			case tar.TypeDir:
 				{
-					err := os.MkdirAll(path, constants.DirPermision)
+					err := os.MkdirAll(path, constants.DirPermission)
 					if err != nil {
 						l.LogE(err).Error("Error in creating directory")
 						return err
@@ -630,7 +630,7 @@ func CreateSneakyChain(CVMFSRepo, newChainId, previousChainId string, layer tar.
 				}
 			case tar.TypeReg, tar.TypeRegA:
 				{
-					f, err := os.OpenFile(path, os.O_CREATE|os.O_RDWR, constants.FilePermision)
+					f, err := os.OpenFile(path, os.O_CREATE|os.O_RDWR, constants.FilePermission)
 					if err != nil {
 						l.LogE(err).Error("Error in creating file")
 						return err
@@ -739,7 +739,7 @@ func makeWhiteoutFile(path string) error {
 
 func makeOpaqueDir(path string) error {
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		if err := os.MkdirAll(path, constants.DirPermision); err != nil {
+		if err := os.MkdirAll(path, constants.DirPermission); err != nil {
 			return err
 		}
 	}
