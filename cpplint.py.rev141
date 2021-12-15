@@ -4728,7 +4728,7 @@ def _GetTextInside(text, start_pattern):
   if punctuation_stack:
     # Opening punctuations left without matching close-punctuations.
     return None
-  # punctuations match.
+  # punctuation matches.
   return text[start_position:position - 1]
 
 
