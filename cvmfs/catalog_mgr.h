@@ -191,7 +191,7 @@ class AbstractCatalogManager : public SingleCopy {
   }
   inline CatalogT* GetRootCatalog() const { return catalogs_.front(); }
   /**
-   * Inodes are ambiquitous under some circumstances, to prevent problems
+   * Inodes are ambiguous under some circumstances, to prevent problems
    * they must be passed through this method first
    * @param inode the raw inode
    * @return the revised inode
