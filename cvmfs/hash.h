@@ -239,7 +239,7 @@ struct Digest {
   void set_suffix(const Suffix s) { suffix = s; }
 
   /**
-   * Generates a hexified repesentation of the digest including the identifier
+   * Generates a hexified representation of the digest including the identifier
    * string for newly added hashes.
    *
    * @param with_suffix  append the hash suffix (C,H,X, ...) to the result
@@ -264,7 +264,7 @@ struct Digest {
   }
 
   /**
-   * Generates a hexified repesentation of the digest including the identifier
+   * Generates a hexified representation of the digest including the identifier
    * string for newly added hashes.  Output is in the form of
    * 'openssl x509 fingerprint', e.g. 00:AA:BB:...-SHAKE128
    *
