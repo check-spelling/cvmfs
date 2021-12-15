@@ -552,7 +552,7 @@ class SettingsBuilder : SingleCopy {
   std::map<std::string, std::string> GetSessionEnvironment();
 
   /**
-   * Create settings from an ephermal writable shell
+   * Create settings from an ephemeral writable shell
    */
   SettingsPublisher* CreateSettingsPublisherFromSession();
 };  // class SettingsBuilder
