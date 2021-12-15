@@ -83,7 +83,7 @@ setup_environment_variables_3() {
 }
 
 
-print_envionment_variables() {
+print_environment_variables() {
   echo "\$FOO_VERSION     = $FOO_VERSION"
   echo "\$BAR_VERSION     = $BAR_VERSION"
   echo "\$PROGRAM_TYPE    = $PROGRAM_TYPE"
@@ -160,7 +160,7 @@ cvmfs_run_test() {
 
   echo "set up environment variables"
   setup_environment_variables_1 || return 2
-  print_envionment_variables    || return 3
+  print_environment_variables    || return 3
 
   echo "create a local mount of the created repository"
   TEST_592_MOUNTPOINT="$(pwd)/local_mount"
@@ -191,7 +191,7 @@ cvmfs_run_test() {
 
   echo "set up new environment variables"
   setup_environment_variables_2 || return 8
-  print_envionment_variables    || return 9
+  print_environment_variables    || return 9
 
   echo "create a local mount of the created repository"
   do_local_mount "$TEST_592_MOUNTPOINT" \
@@ -215,7 +215,7 @@ cvmfs_run_test() {
 
   echo "set up new environment variables"
   setup_environment_variables_3 || return 14
-  print_envionment_variables    || return 15
+  print_environment_variables    || return 15
 
   echo "create a local mount of the created repository"
   do_local_mount "$TEST_592_MOUNTPOINT" \
