@@ -20,7 +20,7 @@ namespace catalog {
  * A Dirtab is handling the parsing and processing of the .cvmfsdirtab file.
  * The .cvmfsdirtab contains a list of Pathspecs that define where CernVM-FS
  * should automatically create nested catalogs. Furthermore it can contain neg-
- * ative rules to omit the automatic creation of nested catalogs in certain
+ * native rules to omit the automatic creation of nested catalogs in certain
  * directories.
  *
  * Example (adding a space in front of * - silence compiler warning):
