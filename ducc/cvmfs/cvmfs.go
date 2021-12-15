@@ -137,7 +137,7 @@ func CreateSymlinkIntoCVMFS(CVMFSRepo, newLinkName, toLinkPath string) (err erro
 				// the file exists and it is a symlink, we overwrite it
 				err = os.Remove(newLinkName)
 				if err != nil {
-					err = fmt.Errorf("Error in removing existsing symlink: %s", err)
+					err = fmt.Errorf("Error in removing existing symlink: %s", err)
 					llog(l.LogE(err)).Error("Error in removing previous symlink")
 					return err
 				}

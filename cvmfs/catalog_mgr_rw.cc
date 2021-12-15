@@ -331,7 +331,7 @@ void WritableCatalogManager::Clone(const std::string destination,
 
 
 /**
- * Copies an entire directory tree from the exisitng from_dir to the
+ * Copies an entire directory tree from the existing from_dir to the
  * non-existing to_dir. The destination's parent directory must exist. On the
  * catalog level, the new entries will be identical to the old ones except
  * for their path hash fields.
