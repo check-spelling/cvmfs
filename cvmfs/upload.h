@@ -81,7 +81,7 @@
  *                 *********************
  *
  *
- * TODO(rmeusel): special purpose ::Process...() methods should (opionally?)
+ * TODO(rmeusel): special purpose ::Process...() methods should (optionally?)
  *                return Future<> instead of relying on the callbacks. Those are
  *                somewhat one-shot calls and require a rather fishy idiom when
  *                using callbacks, like:
