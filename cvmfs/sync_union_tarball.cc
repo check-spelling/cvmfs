@@ -312,7 +312,7 @@ bool SyncUnionTarball::IsWhiteoutEntry(SharedPtr<SyncItem> entry) const {
   return false;
 }
 
-/* Tar files are not necessarly traversed in order from root to leave.
+/* Tar files are not necessarily traversed in order from root to leave.
  * So it may happens that we are expanding the file `/a/b/c.txt` without
  * having created yet the directory `/a/b/`.
  * In order to overcome this limitation the following function create dummy
