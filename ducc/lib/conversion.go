@@ -87,7 +87,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 				continue
 			}
 			// delete the old pubLink
-			// make a new Link to the privatePaht
+			// make a new Link to the privatePath
 			// after that skip and continue
 			l.Log().WithFields(log.Fields{"image": inputImage.GetSimpleName()}).Info("Updating Singularity Image")
 			err = cvmfs.CreateSymlinkIntoCVMFS(wish.CvmfsRepo, publicSymlinkPath, singularityPrivatePath)
