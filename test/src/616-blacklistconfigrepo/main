@@ -47,7 +47,7 @@ cvmfs_run_test() {
   echo "starting transaction to edit repository"
   start_transaction $CVMFS_TEST_REPO || return $?
 
-  echo "download whitelist for getting the fingeprint"
+  echo "download whitelist for getting the fingerprint"
   download_from_backend $CVMFS_TEST_REPO_MORE .cvmfswhitelist whitelist || return 50
   local fingerprint=$(head -5 whitelist | grep -a -A1 ^N | tail -1)
 
