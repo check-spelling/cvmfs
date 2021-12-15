@@ -256,7 +256,7 @@ class Resolver : SingleCopy {
 
   /**
    * Limit number of resolved IP addresses.  If throttle_ is 0 it has no effect.
-   * Otherwise, if more than thottle_ IPs are registered for a host, only
+   * Otherwise, if more than throttle_ IPs are registered for a host, only
    * throttle_ randomly picked IPs are returned.
    */
   unsigned throttle_;
