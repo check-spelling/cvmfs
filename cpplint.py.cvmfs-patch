@@ -19,7 +19,7 @@
      error(filename, 0, 'legal/copyright', 5,
 -          'No copyright message found.  '
 -          'You should have a line: "Copyright [year] <Copyright Owner>"')
-+          'No cvmfs ownerhip tag found.  '
++          'No cvmfs ownership tag found.  '
 +          'You should have a line: "This file is part of the CernVM File System"')
 
 

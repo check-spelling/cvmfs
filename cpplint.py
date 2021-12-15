@@ -1628,7 +1628,7 @@ def CheckForCopyright(filename, lines, error):
     if re.search(r'This file is part of the CernVM File System', lines[line], re.I): break
   else:                       # means no copyright line was found
     error(filename, 0, 'legal/copyright', 5,
-          'No cvmfs ownerhip tag found.  '
+          'No cvmfs ownership tag found.  '
           'You should have a line: "This file is part of the CernVM File System"')
 
 
