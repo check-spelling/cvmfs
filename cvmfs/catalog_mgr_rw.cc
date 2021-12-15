@@ -781,7 +781,7 @@ void WritableCatalogManager::CreateNestedCatalog(const std::string &mountpoint)
                                                     // catalog gets VOMS authz
                                                new_root_entry);
   assert(retval);
-  // TODO(rmeusel): we need a way to attach a catalog directy from an open
+  // TODO(rmeusel): we need a way to attach a catalog directly from an open
   // database to remove this indirection
   delete new_catalog_db;
   new_catalog_db = NULL;
