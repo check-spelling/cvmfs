@@ -6,9 +6,9 @@ index cc70a64..13727de 100644
  
  // Finds proxy for the given URL and Host.
  //
--// If JavaScript engine is intialized and FindProxyForURL function is defined,
+-// If JavaScript engine is initialized and FindProxyForURL function is defined,
 -// it evaluates code FindProxyForURL(url,host) in JavaScript context and
-+// If JavaScript engine is intialized and findProxyForURL function is defined,
++// If JavaScript engine is initialized and findProxyForURL function is defined,
 +// it evaluates code findProxyForURL(url,host) in JavaScript context and
  // returns the result.
  char *                                  // Proxy string or NULL if failed.
