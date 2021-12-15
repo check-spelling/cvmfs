@@ -1193,7 +1193,7 @@
   * Create cvmfs user in cvmfs_server if necessary
   * Fixed cvmfs_fsck on xfs
   * Fixed get_origin in config.sh
-  * Speed up searach for existing mount point in mount helper
+  * Speed up search for existing mount point in mount helper
   * Log to syslog when new repository snapshot is applied
   * Fixed presentation error in cvmfs_stat
   * Added repository prefix to syslog messages
