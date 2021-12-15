@@ -80,7 +80,7 @@ class FileIngestionSource : public IngestionSource {
     if (fd_ == -1) return true;
 
     // tell to the OS that we are not going to access the file again in the
-    // foreaseable future.
+    // foreseeable future.
     (void)platform_invalidate_kcache(fd_, 0, 0);
 
     int ret = close(fd_);
