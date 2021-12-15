@@ -116,7 +116,7 @@ typedef char Suffix;
  * Holds a hash digest and provides from string / to string conversion and
  * comparison.  The kAny algorithm may not be used in functions!  The algorithm
  * has to be changed beforehand.
- * This class is not used directly, but used as base clase of Md5, Sha1, ...
+ * This class is not used directly, but used as base class of Md5, Sha1, ...
  */
 template<unsigned digest_size_, Algorithms algorithm_>
 struct Digest {
