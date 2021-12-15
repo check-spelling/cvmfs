@@ -186,7 +186,7 @@ __do_all_snapshots() {
   local skip_noninitial=0
   local snapshot_group
   local log
-  local fullog
+  local fulllog
   local repo
   local repos
 
