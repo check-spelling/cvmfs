@@ -2,7 +2,7 @@
  * This file is part of the CernVM File System.
  *
  * This is a wrapper around OpenSSL's libcrypto.  It supports
- * signing of data with an X.509 certificate and verifiying
+ * signing of data with an X.509 certificate and verifying
  * a signature against a certificate.  The certificates can act only as key
  * store, in which case there is no verification against the CA chain.
  *
