@@ -1043,7 +1043,7 @@ bool CommandMigrate::MigrationWorker_20x::MigrateFileMetadata(
     "     linkcount  INTEGER  );");
   retval = sql_create_linkcounts_table.Execute();
   if (!retval) {
-    Error("Failed to create tmeporary directory linkcount analysis table",
+    Error("Failed to create temporary directory linkcount analysis table",
           sql_create_linkcounts_table, data);
   }
 
