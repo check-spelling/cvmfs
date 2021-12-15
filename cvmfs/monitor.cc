@@ -221,7 +221,7 @@ string Watchdog::ReadUntilGdbPrompt(int fd_pipe) {
 
     result += mini_buffer;
 
-    // find the gdb_promt in the stdout data
+    // find the gdb_prompt in the stdout data
     if (mini_buffer == gdb_prompt[ring_buffer_pos]) {
       ++ring_buffer_pos;
       if (ring_buffer_pos == gdb_prompt.size()) {
