@@ -1936,7 +1936,7 @@ static void ShutdownMountpoint() {
   delete cvmfs::notification_client_;
   cvmfs::notification_client_ = NULL;
 
-  // The remonter has a reference to the mount point and the inode generation
+  // The remounter has a reference to the mount point and the inode generation
   delete cvmfs::fuse_remounter_;
   cvmfs::fuse_remounter_ = NULL;
 
