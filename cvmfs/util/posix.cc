@@ -1198,7 +1198,7 @@ std::vector<std::string> FindFilesByPrefix(
 
 /**
  * Finds all direct subdirectories under parent_dir (except ., ..).  Used,
- * for instance, to parse /etc/cvmfs/repositories.d/<reponoame>
+ * for instance, to parse /etc/cvmfs/repositories.d/<reponame>
  */
 std::vector<std::string> FindDirectories(const std::string &parent_dir) {
   std::vector<std::string> result;
