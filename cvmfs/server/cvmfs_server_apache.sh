@@ -5,7 +5,7 @@
 #
 # Functionality related to the Apache web server
 
-# This file depends on fuctions implemented in the following files:
+# This file depends on functions implemented in the following files:
 # - cvmfs_server_util.sh
 
 

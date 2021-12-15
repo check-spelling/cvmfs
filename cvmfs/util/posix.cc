@@ -1088,7 +1088,7 @@ std::string GetCurrentWorkingDirectory() {
 
 
 /**
- * Helper class that provides callback funtions for the file system traversal.
+ * Helper class that provides callback functions for the file system traversal.
  */
 class RemoveTreeHelper {
  public:
