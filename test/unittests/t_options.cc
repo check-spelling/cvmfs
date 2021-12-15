@@ -48,7 +48,7 @@ class T_Options : public ::testing::Test {
             "BAR=abc@def.com");
     int result = fclose(temp_file);
     ASSERT_EQ(0, result);
-    fprintf(temp_file_2, "CVMFS_CACHE_BASE=/overwritten\n");
+    fprintf(temp_file_2, "CVMFS_CACHE_BASE=/overridden\n");
     result = fclose(temp_file_2);
     ASSERT_EQ(0, result);
   }
@@ -157,14 +157,14 @@ TYPED_TEST(T_Options, ProtectedParameter) {
   options_manager.ParsePath(config_file, false);
   options_manager.ParsePath(config_file_2, false);
   EXPECT_TRUE(options_manager.GetValue("CVMFS_CACHE_BASE", &container));
-  EXPECT_EQ("/overwritten", container);
+  EXPECT_EQ("/overridden", container);
 
   options_manager.ClearConfig();
   options_manager.ParsePath(config_file, false);
   options_manager.ProtectParameter("CVMFS_CACHE_BASE");
   options_manager.ParsePath(config_file_2, false);
   EXPECT_TRUE(options_manager.GetValue("CVMFS_CACHE_BASE", &container));
-  EXPECT_NE("/overwritten", container);
+  EXPECT_NE("/overridden", container);
 }
 
 TYPED_TEST(T_Options, GetEnvironmentSubset) {

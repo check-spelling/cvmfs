@@ -364,7 +364,7 @@ Host Resolver::Resolve(const string &name) {
 
 
 /**
- * Calls the overwritten concrete resolver, verifies the sanity of the returned
+ * Calls the overridden concrete resolver, verifies the sanity of the returned
  * addresses and constructs the Host objects in the same order as the names.
  */
 void Resolver::ResolveMany(const vector<string> &names, vector<Host> *hosts) {

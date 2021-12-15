@@ -15,7 +15,7 @@
  * On construction, $X509_CERT_DIR has precendence over
  * /etc/grid-security/certificates.
  * $X509_CERT_BUNDLE is checked for a bundle.
- * The path settings can later be overwritten by UseSystemCertificatePath();
+ * The path settings can later be overridden by UseSystemCertificatePath();
  * the $X509_CERT_BUNDLE settings are unaffected by UseSystemCertificatePath().
  */
 class SslCertificateStore {

@@ -75,7 +75,7 @@ class OptionsManager {
 
   /**
    * Opens the config_file and extracts all contained variables and their
-   * corresponding values. The new variables are set (and overwritten in case
+   * corresponding values. The new variables are set (and overridden in case
    * they were previously defined) as environment variables
    *
    * @param config_file  absolute path to the configuration file

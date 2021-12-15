@@ -191,7 +191,7 @@ class Recorder {
  private:
   /**
    * Records number of ticks (events) per unit of resolution.  A ring buffer.
-   * Entries older than capacity_s get overwritten by new events.
+   * Entries older than capacity_s get overridden by new events.
    */
   std::vector<uint32_t> bins_;
 

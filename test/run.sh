@@ -270,7 +270,7 @@ do
 
   wc -l < $logfile > ${scratchdir}/log_begin
 
-  cvmfs_test_autofs_on_startup=true # might be overwritten by some tests
+  cvmfs_test_autofs_on_startup=true # might be overridden by some tests
   if ! . $t/main; then
     report_failure "failed to source $t/main" >> $logfile
     echo "101" > ${scratchdir}/retval

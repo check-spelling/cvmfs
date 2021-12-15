@@ -31,7 +31,7 @@ _import_desaster_cleanup() {
 
   if [ $IMPORT_DESASTER_MANIFEST_SIGNED -ne 0 ] && \
      [ x$IMPORT_DESASTER_MANIFEST_BACKUP != x"" ]; then
-    echo "Manifest was overwritten. If needed here is a backup: $IMPORT_DESASTER_MANIFEST_BACKUP"
+    echo "Manifest was overridden. If needed here is a backup: $IMPORT_DESASTER_MANIFEST_BACKUP"
   fi
 }
 

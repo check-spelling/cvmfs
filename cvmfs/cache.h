@@ -226,7 +226,7 @@ class CacheManager : SingleCopy {
  protected:
   CacheManager();
 
-  // Unless overwritten, Saving/Restoring states will crash the Fuse module
+  // Unless overridden, Saving/Restoring states will crash the Fuse module
   virtual void *DoSaveState() { return NULL; }
   virtual int DoRestoreState(void *data) { return false; }
   virtual bool DoFreeState(void *data) { return false; }

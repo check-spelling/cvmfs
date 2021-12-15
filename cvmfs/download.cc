@@ -2075,7 +2075,7 @@ void DownloadManager::SwitchHost() {
  * Orders the hostlist according to RTT of downloading .cvmfschecksum.
  * Sets the current host to the best-responsive host.
  * If you change the host list in between by SetHostChain(), it will be
- * overwritten by this function.
+ * overridden by this function.
  */
 void DownloadManager::ProbeHosts() {
   vector<string> host_chain;
@@ -2211,7 +2211,7 @@ bool DownloadManager::GeoSortServers(std::vector<std::string> *servers,
  *   and fallback proxies (if any).
  * Tries at most three random Stratum 1s before giving up.
  * If you change the host list in between by SetHostChain() or the fallback
- *   proxy list by SetProxyChain(), they will be overwritten by this function.
+ *   proxy list by SetProxyChain(), they will be overridden by this function.
  */
 bool DownloadManager::ProbeGeo() {
   vector<string> host_chain;

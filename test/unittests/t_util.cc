@@ -1388,11 +1388,11 @@ TEST_F(T_Util, ParseKeyvalMem) {
   EXPECT_EQ(10u, map.size());  // including the end() node in the map
   EXPECT_EQ("f3bc68897a32278da5b5b0e4b5e4711a9102dde5", map['C']);
   EXPECT_EQ("75834368", map['B']);
-  EXPECT_EQ("first|second", map['Z']);  // "first" shouldn't be overwritten
+  EXPECT_EQ("first|second", map['Z']);  // "first" shouldn't be overridden
   EXPECT_EQ("d41d8cd98f00b204e9800998ecf8427e", map['R']);
   EXPECT_EQ("900", map['D']);
   EXPECT_EQ("8418", map['S']);
-  EXPECT_EQ("cms.cern.ch", map['N']);  // "atlas.cern.ch" should be overwritten
+  EXPECT_EQ("cms.cern.ch", map['N']);  // "atlas.cern.ch" should be overridden
   EXPECT_EQ("0b457ac12225018e0a15330364c20529e15012ab", map['X']);
   EXPECT_EQ("70a5de156ee5eaf4f8e191591b6ade378f1120bd", map['H']);
   EXPECT_EQ("1431669806", map['T']);

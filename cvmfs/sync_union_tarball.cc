@@ -316,7 +316,7 @@ bool SyncUnionTarball::IsWhiteoutEntry(SharedPtr<SyncItem> entry) const {
  * So it may happens that we are expanding the file `/a/b/c.txt` without
  * having created yet the directory `/a/b/`.
  * In order to overcome this limitation the following function create dummy
- * directories that can be used as placeholder and that they will be overwritten
+ * directories that can be used as placeholder and that they will be overridden
  * as soon as the real directory is found in the tarball
  */
 void SyncUnionTarball::CreateDirectories(const std::string &target) {

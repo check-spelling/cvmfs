@@ -22,7 +22,7 @@ namespace publish {
 
 /**
  * Allows for settings that remember whether they have been explicitly
- * overwritten.  Otherwise, default values can be changed to upstream repository
+ * overridden.  Otherwise, default values can be changed to upstream repository
  * settings.
  */
 template <class T>
@@ -69,7 +69,7 @@ enum EUnionMountRepairMode {
 
 
 // Settings from the point of construction always represent a valid
-// configuration. The constructor sets default values, which can be overwritten
+// configuration. The constructor sets default values, which can be overridden
 // by setters. The setters throw errors when invalid options are detected.
 
 class SettingsSpoolArea {

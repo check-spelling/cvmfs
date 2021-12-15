@@ -76,7 +76,7 @@ cvmfs_run_test() {
   echo "list non-empty mountpoint"
   ls -lisa /cvmfs/${legacy_repo_name}/non_empty_nested_mountpoint || return 12
 
-  echo "check that the non-empty mountpoint is overwritten by the nested catalog's content"
+  echo "check that the non-empty mountpoint is overridden by the nested catalog's content"
   cat /cvmfs/${legacy_repo_name}/non_empty_nested_mountpoint/non_hidden_content_1/foo || return 13
 
   # this check should produce catalog statistics errors, because there

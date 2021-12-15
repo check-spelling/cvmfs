@@ -713,10 +713,10 @@ TEST(T_Pathspec, AssignmentOperator) {
   EXPECT_TRUE(p5->IsValid());
   EXPECT_TRUE(p5->IsMatching("/another/heap/path.spec"));
 
-  Pathspec p6("will/be/overwritten");
+  Pathspec p6("will/be/overridden");
   EXPECT_TRUE(p6.IsValid());
-  EXPECT_TRUE(p6.IsMatching("will/be/overwritten"));
-  EXPECT_FALSE(p6.IsMatchingRelaxed("/will/be/overwritten"));
+  EXPECT_TRUE(p6.IsMatching("will/be/overridden"));
+  EXPECT_FALSE(p6.IsMatchingRelaxed("/will/be/overridden"));
 
   p6 = *p5;
   EXPECT_FALSE(p6.IsMatchingRelaxed("/heap/path!spec"));
