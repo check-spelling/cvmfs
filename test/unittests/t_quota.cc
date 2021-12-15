@@ -71,9 +71,9 @@ class T_QuotaManager : public ::testing::Test {
     signal(SIGPIPE, sigpipe_save_);
 
     CountPipeHelper count_pipe_helper;
-    FileSystemTraversal<CountPipeHelper> travsl(&count_pipe_helper, "", false);
-    travsl.fn_new_fifo = &CountPipeHelper::EncounterPipe;
-    travsl.Recurse(tmp_path_);
+    FileSystemTraversal<CountPipeHelper> traversal(&count_pipe_helper, "", false);
+    traversal.fn_new_fifo = &CountPipeHelper::EncounterPipe;
+    traversal.Recurse(tmp_path_);
     EXPECT_EQ(0U, count_pipe_helper.num_pipes());
 
     if (tmp_path_ != "")
