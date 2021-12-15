@@ -528,7 +528,7 @@ void WritableCatalog::InsertNestedCatalog(const string &mountpoint,
 
 
 /**
- * Registeres a snapshot in /.cvmfs/snapshots. Note that bind mountpoints are
+ * Registers a snapshot in /.cvmfs/snapshots. Note that bind mountpoints are
  * not universally handled: in Partition and MergeIntoParent, bind mountpoint
  * handling is missing!
  */
