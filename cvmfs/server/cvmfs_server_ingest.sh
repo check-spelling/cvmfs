@@ -79,7 +79,7 @@ cvmfs_server_ingest() {
     if [ ! x"$tar_file" = "x" ] && [ ! x"$to_delete" = "x" ]; then
       die "Could not delete and add a file in the same transaction while using gateway."
     fi
-    # by the chek above we are sure that there is only a tar_file to ingest or a directory to_delete
+    # by the check above we are sure that there is only a tar_file to ingest or a directory to_delete
     # hence we just concatenate them with the name for the transaction
     cvmfs_server_transaction "$name/$base_dir$to_delete" || die "Impossible to start a transaction"
   else
