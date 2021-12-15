@@ -238,7 +238,7 @@ message MsgShrinkReply {
   required uint64 used_bytes  = 3;
 }
 
-// Read a portion from a stored object.  Garuanteed to work for objects with a
+// Read a portion from a stored object.  Guaranteed to work for objects with a
 // reference counter larger than zero.
 message MsgReadReq {
   required uint64 session_id = 1;
