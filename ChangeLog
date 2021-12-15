@@ -1504,7 +1504,7 @@
   * add last modified timestamp when making catalog snapshot
   * fixed time comparison to work on UTC instead of
     local time
-  * use the SQlite auto_vaccum=full feature for new catalogs
+  * use the SQlite auto_vacuum=full feature for new catalogs
   * added cvmfs_unsign tool to strip a signature from a
     file catalog
   * store .cvmfscatalog as symlink into data dir
