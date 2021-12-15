@@ -66,7 +66,7 @@ class Compressor: public PolymorphicConstruction<Compressor, Algorithms> {
    * Deflate function.  The arguments and returns closely match the input and
    * output of the zlib deflate function.
    * Input:
-   *   - outbuf - Ouput buffer to write the compressed data.
+   *   - outbuf - Output buffer to write the compressed data.
    *   - outbufsize - Size of the output buffer
    *   - inbuf - Input data to be compressed
    *   - inbufsize - Size of the input buffer
