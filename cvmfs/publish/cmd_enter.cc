@@ -390,7 +390,7 @@ std::string CmdEnter::GetCvmfsXattr(const std::string &name) {
   bool rvb = platform_getxattr(settings_spool_area_.readonly_mnt(),
                                std::string("user.") + name, &xattr);
   if (!rvb) {
-    throw EPublish("cannot get extrended attribute " + name + " from " +
+    throw EPublish("cannot get extended attribute " + name + " from " +
                    settings_spool_area_.readonly_mnt());
   }
   return xattr;
