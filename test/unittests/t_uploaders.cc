@@ -525,7 +525,7 @@ TYPED_TEST_CASE(T_Uploaders, UploadTypes);
 
 //------------------------------------------------------------------------------
 
-static void LogSupress(const LogSource source, const int mask, const char *msg)
+static void LogSuppress(const LogSource source, const int mask, const char *msg)
 {
 }
 
@@ -540,7 +540,7 @@ TYPED_TEST(T_Uploaders, RetrySlow) {
 
   upload::S3Uploader *s3uploader =
     static_cast<upload::S3Uploader *>(this->uploader_);
-  SetAltLogFunc(LogSupress);
+  SetAltLogFunc(LogSuppress);
   EXPECT_EQ(0U, s3uploader->GetS3FanoutManager()->GetStatistics().num_retries);
   this->uploader_->UploadFile(small_file_path, dest_name,
                               AbstractUploader::MakeClosure(
