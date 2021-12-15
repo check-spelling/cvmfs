@@ -44,7 +44,7 @@ var thinImageVersion = "1.0"
 
 // m is the manifest of the original image
 // repoLocation is where inside the repo we saved the several layers
-// origin is an encoding of the original referencese and original registry
+// origin is an encoding of the original references and original registry
 // I believe origin is quite useless but maybe is better to preserv it for
 // ergonomic reasons.
 func MakeThinImage(m Manifest, layersMapping map[string]string, origin string) (ThinImage, error) {
