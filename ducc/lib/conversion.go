@@ -74,7 +74,7 @@ func ConvertWishFlat(wish WishFriendly) error {
 		l.Log().WithFields(log.Fields{
 			"image":                  inputImage.GetSimpleName(),
 			"public path":            completePubSymPath,
-			"err stats pubblic path": errPub,
+			"err stats public path": errPub,
 			"private path":           completeSingularityPriPath,
 			"err stats private path": errPri,
 		}).Info("Checking if images links are up to date.")
