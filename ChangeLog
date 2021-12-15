@@ -616,7 +616,7 @@
   * Call cvmfs_suid_helper with a clean environment from cvmfs_server
   * Add .cvmfsreflog for garbage collection
   * Omit S3 bucket number if only a single bucket is used
-  * Warn when forcfully remounting the file system stack on the server, new
+  * Warn when forcefully remounting the file system stack on the server, new
     parameter CVMFS_FORCE_REMOUNT_WARNING
   * Add support for default.conf in config repository (CVM-993)
 
