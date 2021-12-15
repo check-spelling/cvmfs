@@ -1091,7 +1091,7 @@ bool WritableCatalogManager::Commit(const bool           stop_for_tweaks,
  *
  * The idea is as follows:
  *  1. find all leaf-catalogs (i.e. dirty catalogs with no dirty children)
- *     --> these can be processed and uploaded immedately and independently
+ *     --> these can be processed and uploaded immediately and independently
  *         see WritableCatalogManager::GetModifiedCatalogLeafs()
  *  2. annotate non-leaf catalogs with their number of dirty children
  *     --> a finished child will notify it's parent and decrement this number
