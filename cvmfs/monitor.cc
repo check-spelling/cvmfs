@@ -2,7 +2,7 @@
  * This file is part of the CernVM File System.
  *
  * This module forks a watchdog process that listens on
- * a pipe and prints a stackstrace into syslog, when cvmfs
+ * a pipe and prints a stacktrace into syslog, when cvmfs
  * fails.
  *
  * Also, it handles getting and setting the maximum number of file descriptors.
