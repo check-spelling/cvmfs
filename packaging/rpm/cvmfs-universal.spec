@@ -734,7 +734,7 @@ systemctl daemon-reload
 * Thu Jun 30 2016 Jakob Blomer <jblomer@cern.ch> - 2.3.1
 - Fix SLES12 dist tag
 * Tue May 03 2016 Jakob Blomer <jblomer@cern.ch> - 2.3.0
-- No optimiziation on EL5/i686 to prevent faulty atomics
+- No optimization on EL5/i686 to prevent faulty atomics
 * Fri Apr 29 2016 Jakob Blomer <jblomer@cern.ch> - 2.3.0
 - voms-devel not necessary anymore
 * Mon Apr 11 2016 Rene Meusel <rene.meusel@cern.ch> - 2.3.0
