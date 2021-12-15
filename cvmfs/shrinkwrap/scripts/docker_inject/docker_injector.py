@@ -60,7 +60,7 @@ class FatManifest:
     Injects a new version of the layer by replacing the corresponding digests
     """
     if not self.is_cvmfs_prepared():
-      raise ValueError("Cannot inject in unprepated image")
+      raise ValueError("Cannot inject in unprepared image")
     old_tar_digest = self.manif["config"]["Labels"]["cvmfs_injection_tar"]
 
     self.manif["container_config"]["Labels"]["cvmfs_injection_tar"] = tar_digest
