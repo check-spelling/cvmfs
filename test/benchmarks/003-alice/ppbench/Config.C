@@ -108,7 +108,7 @@ void Config()
 			    "recreate");
     if (rl == 0x0)
       {
-	gAlice->Fatal("Config.C","Can not instatiate the Run Loader");
+	gAlice->Fatal("Config.C","Can not instantiate the Run Loader");
 	return;
       }
     rl->SetCompressionLevel(2);
