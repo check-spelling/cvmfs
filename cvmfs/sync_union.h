@@ -147,7 +147,7 @@ class SyncUnion {
   AbstractSyncMediator *mediator_;
 
   /**
-   * Allow for preprocessing steps before emiting any SyncItems from SyncUnion.
+   * Allow for preprocessing steps before emitting any SyncItems from SyncUnion.
    * This can be overridden by sub-classes but should always be up-called. Typi-
    * cally this sets whiteout and opaque-directory flags or handles hardlinks.
    * @param entry  the SyncItem to be pre-processed
