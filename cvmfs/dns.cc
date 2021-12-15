@@ -976,7 +976,7 @@ void CaresResolver::SetSystemSearchDomains() {
 
 /**
  * Polls on c-ares sockets and triggers call-backs execution.  Might be
- * necessary to call this repeatadly.
+ * necessary to call this repeatedly.
  */
 void CaresResolver::WaitOnCares() {
   // Adapted from libcurl
