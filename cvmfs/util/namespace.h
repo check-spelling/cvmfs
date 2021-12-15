@@ -19,7 +19,7 @@ const int kNsFeatureUserEnabled   = 0x08;
 
 enum NamespaceFailures {
   kFailNsOk = 0,
-  kFailNsUnsuppored,
+  kFailNsUnsupported,
   kFailNsUnshare,
   kFailNsMapUidOpen,
   kFailNsMapUidWrite,
